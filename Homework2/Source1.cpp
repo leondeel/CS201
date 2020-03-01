@@ -7,16 +7,20 @@ using std::cin;
 using std::endl;
 using std::string;
 using std::getline;
+using std::vector;
 
 int main(int argc, char** argv) {
 
-	std::vector<std::string> names;
+	vector<string> names;
+
 	for (int i = 0; i < 10; i++) {
 
-		std::string name;
-		std::cout << "Please enter a name:  ";
-		std::getline(cin, name);
+		string name;
+		cout << "Please enter a name:  ";
+		getline(cin, name);
 		names.push_back(name);
 	}
 	return 0;
-}	
+
+
+}
