@@ -20,14 +20,15 @@ int main() {
 
 
 bool doesNameExist(const string& nameToFind, const vector<string>& names) {
-	vector<bool> letterMatches;
-	letterMatches.reserve(nameToFind.size());
 
 	for (int i = 0; i < names.size(); i++) {
 		for (int k = 0; k <= names[i].size() - nameToFind.size(); k++) {
 			if (names[i][k] == nameToFind[0]) {
 				int n = 1;
-				while(names[i][k+n])
+				while(names[i][k+n] == nameToFind[n] && n<nameToFind.size()){
+					n++;
+				}
+				if (n = nameToFind.size()) return 1;
 			}
 		}
 	}
