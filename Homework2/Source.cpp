@@ -15,19 +15,22 @@ bool doesNameExist(const string &nameToFind, const vector<string> &names);
 int main() {
 	vector<string> names;
 	inputNames(names);
-	return 0;
+	return doesNameExist("Ariel", names);
 }
 
 
 bool doesNameExist(const string& nameToFind, const vector<string>& names) {
 	for (int i = 0; i <= names.size(); i++) {
-
+		for (int k = 0; k <= names[i].size(); k++) {
+			for (int n = 0; n <= nameToFind.size(); n++) {
+				if (nameToFind[n] = names[i][k])
+			}
+		}
 	}
 	return 0;
 }
 
 void inputNames(vector<string> &names) {
-
 	for (int i = 0; i < 10; i++) {
 		string name;
 		cout << "Please enter a name:  ";
