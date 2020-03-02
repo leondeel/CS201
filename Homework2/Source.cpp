@@ -12,27 +12,17 @@ using std::vector;
 void inputNames(vector<string>& names);
 bool doesNameExist(const string &nameToFind, const vector<string> &names);
 
-
 int main() {
-	unsigned int x = 0;
-	if (x <= -1) {
-		cout << "error" << endl;
-	}
-	else {
-		cout << "ok" << endl;
-	}
 	vector<string> names;
 	inputNames(names);
 	return doesNameExist("Ariel", names);
 }
 
-
-
 bool doesNameExist(const string& nameToFind, const vector<string>& names) {
 
 	if (nameToFind.size() == 0) return 1; //Any name with zero letters is contained within any list of any kind.
 	for (unsigned int i = 0; i < names.size(); i++) {
-		for (unsigned int k = 0; k <= names[i].size() - nameToFind.size(); k++) {
+		for (unsigned int k = 0; k <= names[i].size() - nameToFind.size() && 0<= names[i].size() - nameToFind.size(); k++) {
 			for (unsigned int n = 0; names[i][k + n] == nameToFind[n] && n < nameToFind.size(); n++ ) {
 				if (n == nameToFind.size() - 1) return 1;			
 			}
