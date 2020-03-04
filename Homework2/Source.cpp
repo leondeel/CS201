@@ -18,15 +18,15 @@ int main() {
 	vector<string> names;
 	inputNames(names);
 	vector<string> names2;
-	names2.reserve(names.size());
+	names2 = names;
+	cout << names2.size() << endl;
 	for (int i = 0; i < names.size(); i++) {
 		auto k = std::min_element(names.begin(), names.end());
 		int m = distance(names.begin(), k);
-		cout << m << endl;
 		names2[i] = names[m];
-		cout << 1 << endl;
+		cout << 11 << endl;
 		names.erase(k);
-		cout << 2 << endl;
+		cout << 12 << endl;
 	}
 	names = names2;
 	cout << 3 << endl;
