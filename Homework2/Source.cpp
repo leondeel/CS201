@@ -9,27 +9,17 @@ using std::endl;
 using std::string;
 using std::getline;
 using std::vector;
+using std::min_element;
 
 void inputNames(vector<string>& names);
 bool doesNameExist(const string &nameToFind, const vector<string> &names);
 void printNames(const vector<string>& names);
+void interesting(vector<string>& names);  //This function sorts its input into dictionary-order.
 
 int main() {
 	vector<string> names;
 	inputNames(names);
-
-	vector<string> names2;
-	names2.resize(names.size());
-	for (int i = 0; i < names2.size(); i++) {
-		auto k = std::min_element(names.begin(), names.end());
-		int m = distance(names.begin(), k);
-		names2[i] = names[m];
-		names.erase(k);
-	}
-	names = names2;
-
-	printNames(names);
-
+	interesting(names);
 	return doesNameExist("Ariel", names);
 }
 void inputNames(vector<string>& names) {
@@ -57,4 +47,17 @@ void printNames(const vector<string>& names) {
 	for (unsigned int j = 0; j < names.size(); j++) {
 		cout << names[j] << endl;
 	}
+}
+
+//This function sorts its input into dictionary-order.
+void interesting(vector<string>& names) {
+	int vLength = names.size();
+	vector<string> names2(vLength);
+	for (int i = 0; i < vLength; i++) {
+		auto k = min_element(names.begin(), names.end());
+		names2[i] = names[distance(names.begin(), k)];
+		names.erase(k);
+	}
+	names = names2;
+	printNames(names);
 }
