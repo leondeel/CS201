@@ -12,6 +12,7 @@ using std::vector;
 
 void inputNames(vector<string>& names);
 bool doesNameExist(const string &nameToFind, const vector<string> &names);
+void printNames(const vector<string>& names);
 
 int main() {
 	vector<string> names;
@@ -27,6 +28,8 @@ void inputNames(vector<string>& names) {
 	}
 }
 bool doesNameExist(const string& nameToFind, const vector<string>& names) {
+	//Per request of the professor, this function returns true if and only if the name can be found (in any way whatsoever) in the vector of strings.
+	// Also note that this search is case-sensitive.
 	if (nameToFind.size() == 0) return 1; //Any name with zero letters is contained within any list of any kind.
 	for (unsigned int i = 0; i < names.size(); i++) {
 		for (unsigned int k = 0; nameToFind.size() <= names[i].size() && k <= names[i].size() - nameToFind.size(); k++) {
@@ -36,4 +39,9 @@ bool doesNameExist(const string& nameToFind, const vector<string>& names) {
 		}
 	}
 	return 0;
+}
+void printNames(const vector<string>& names) {
+	for (unsigned int j = 0; j < names.size(); j++) {
+
+	}
 }
