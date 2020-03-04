@@ -18,18 +18,17 @@ int main() {
 	vector<string> names;
 	inputNames(names);
 	vector<string> names2;
-	names2 = names;
-	cout << names2.size() << endl;
+	names2.resize(names.size());
 	for (int i = 0; i < names.size(); i++) {
 		auto k = std::min_element(names.begin(), names.end());
 		int m = distance(names.begin(), k);
 		names2[i] = names[m];
-		cout << 11 << endl;
 		names.erase(k);
-		cout << 12 << endl;
 	}
 	names = names2;
-	cout << 3 << endl;
+	printNames(names);
+	cout << names.size() << endl;
+	cout << names2.size() << endl;
 	return doesNameExist("Ariel", names);
 }
 void inputNames(vector<string>& names) {
