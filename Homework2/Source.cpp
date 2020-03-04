@@ -17,18 +17,19 @@ void printNames(const vector<string>& names);
 int main() {
 	vector<string> names;
 	inputNames(names);
+
 	vector<string> names2;
 	names2.resize(names.size());
-	for (int i = 0; i < names.size(); i++) {
+	for (int i = 0; i < names2.size(); i++) {
 		auto k = std::min_element(names.begin(), names.end());
 		int m = distance(names.begin(), k);
 		names2[i] = names[m];
 		names.erase(k);
 	}
 	names = names2;
+
 	printNames(names);
-	cout << names.size() << endl;
-	cout << names2.size() << endl;
+
 	return doesNameExist("Ariel", names);
 }
 void inputNames(vector<string>& names) {
