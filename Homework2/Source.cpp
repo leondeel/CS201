@@ -19,18 +19,21 @@ int main() {
 	inputNames(names);
 	vector<string> names2;
 	names2.reserve(names.size());
-	for (unsigned int i = 0; i < names.size(); i++) {
+	for (int i = 0; i < names.size(); i++) {
 		auto k = std::min_element(names.begin(), names.end());
 		int m = distance(names.begin(), k);
 		cout << m << endl;
 		names2[i] = names[m];
+		cout << 1 << endl;
 		names.erase(k);
+		cout << 2 << endl;
 	}
 	names = names2;
+	cout << 3 << endl;
 	return doesNameExist("Ariel", names);
 }
 void inputNames(vector<string>& names) {
-	for (int i = 0; i < 10; i++) {
+	for (int i = 0; i < 3; i++) {
 		string name;
 		cout << "Please enter a name:  ";
 		getline(cin, name);
