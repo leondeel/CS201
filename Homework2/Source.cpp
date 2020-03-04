@@ -24,7 +24,7 @@ int main() {
 	return doesNameExist("Ariel", names);
 }
 void inputNames(vector<string>& names) {
-	for (int i = 0; i < 3; i++) {
+	for (int i = 0; i < 10; i++) {
 		string name;
 		cout << "Please enter a name:  ";
 		getline(cin, name);
