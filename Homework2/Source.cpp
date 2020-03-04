@@ -14,7 +14,8 @@ using std::min_element;
 void inputNames(vector<string>& names);
 bool doesNameExist(const string &nameToFind, const vector<string> &names);
 void printNames(const vector<string>& names);
-void interesting(vector<string>& names);  //This function sorts its input into dictionary-order.
+void interesting(vector<string>& names);
+//This function sorts its input into dictionary-order, or rather into ASCII order or some equivalent from least to greatest.
 
 int main() {
 	vector<string> names;
@@ -49,7 +50,7 @@ void printNames(const vector<string>& names) {
 	}
 }
 
-//This function sorts its input into dictionary-order.
+//This function sorts its input into dictionary-order, or rather into ASCII order or some equivalent from least to greatest.
 void interesting(vector<string>& names) {
 	int vLength = names.size();
 	vector<string> names2(vLength);
