@@ -19,7 +19,7 @@ void main() {
 	const vector<string> coinTypes = { "pennies", "nickles", "dimes", "quaters", "half-dollars" };
 
 	for (int i = 0; i < 5; i++) {
-		cout << "How many "<< coinTypes[i] << " do you have?" << endl;
+		cout << "How many " << coinTypes[i] << " do you have?" << endl;
 		getline(cin, coins[i]);
 		istringstream instream(coins[i]);
 		int amount;
@@ -33,8 +33,9 @@ void main() {
 			int amount;
 			instream >> amount; // Read number from line
 		}
-		}
+	}
 
+	for (int i = 0; i < 5; i++) {
 	cout << "You have " << cents << endl
 		<< "You have " << cents / 5 << endl
 		<< "You have " << cents / 10 << endl
