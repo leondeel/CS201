@@ -37,6 +37,6 @@ void main() {
 	for (int i = 0; i < 5; i++) {
 		cout << "You have " << coins[i] << ' ' << coinTypes[i] << '.' << endl;
 	}
-
+	cout << "The value of all your coins is " << endl;
 
 
