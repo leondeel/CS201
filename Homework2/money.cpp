@@ -15,14 +15,15 @@ using std::istringstream;
 
 
 void main() {
-	vector<string> coins(5);
+	vector<int> coins(5);
 	const vector<string> coinTypes = { "pennies", "nickles", "dimes", "quaters", "half-dollars" };
+	string line;
 
 	for (int i = 0; i < 5; i++) {
 		cout << "How many " << coinTypes[i] << " do you have?" << endl;
-		getline(cin, coins[i]);
+		getline(cin, line);
 		istringstream instream(coins[i]);
-		int amount;
+		int coins[i];
 		instream >> amount; // Read number from line
 		while (!instream) // Error check
 		{
