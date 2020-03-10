@@ -15,7 +15,7 @@ using std::istringstream;
 
 
 void main() {
-	vector<string> coins = { 0,0,0,0,0 };
+	vector<string> coins(5);
 	const vector<string> coinTypes = { "pennies", "nickles", "dimes", "quaters", "half-dollars" };
 
 	for (int i = 0; i < 5; i++) {
@@ -34,13 +34,9 @@ void main() {
 			instream >> amount; // Read number from line
 		}
 	}
-
 	for (int i = 0; i < 5; i++) {
-	cout << "You have " << cents << endl
-		<< "You have " << cents / 5 << endl
-		<< "You have " << cents / 10 << endl
-		<< "You have " << cents / 25 << endl
-		<< "You have " << cents / 50 << endl
-		<< "The value of all your coins is " << cents << endl;
-}
+		cout << "You have " << coins[i] << ' ' << coinTypes[i] << '.' << endl;
+	}
+
+
 
