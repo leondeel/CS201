@@ -2,6 +2,7 @@
 #include <vector>
 #include <algorithm>
 #include <string>
+#include <sstream>
 
 using std::cout;
 using std::cin;
@@ -10,6 +11,7 @@ using std::string;
 using std::getline;
 using std::vector;
 using std::min_element;
+using std::istringstream;
 
 void inputNames(vector<string>& names);
 bool doesNameExist(const string &nameToFind, const vector<string> &names);
@@ -21,6 +23,31 @@ int main() {
 	vector<string> names;
 	inputNames(names);
 	interesting(names);
+
+	vector<int> coins(5);
+	const vector<string> coinTypes = { "pennies", "nickles", "dimes", "quaters", "half-dollars" };
+	string line;
+
+	for (int i = 0; i < 5; i++) {
+		cout << "How many " << coinTypes[i] << " do you have?" << endl;
+		getline(cin, line);
+		istringstream instream(line);
+		instream >> coins[i]; // Read number from line
+		while (!instream) // Error check
+		{
+			cout << "Please type an INTEGER for the number of " << coinTypes[i] << " you have.  It can be negative if you want." << endl
+				<< "How many " << coinTypes[i] << " do you have?" << endl;
+			getline(cin, line);
+			istringstream instream(line);
+			instream >> coins[i]; // Read number from line
+		}
+	}
+	for (int i = 0; i < 5; i++) {
+		cout << "You have " << coins[i] << ' ' << coinTypes[i] << '.' << endl;
+	}
+	cout << "The value of all your coins is "
+		<< coins[0] + coins[0] * 5 + coins[0] * 10 + coins[0] * 25 + coins[0] * 50 << " cents." << endl;
+
 	return doesNameExist("Ariel", names);
 }
 void inputNames(vector<string>& names) {
