@@ -46,7 +46,7 @@ int main() {
 		cout << "You have " << coins[i] << ' ' << coinTypes[i] << '.' << endl;
 	}
 	cout << "The value of all your coins is "
-		<< coins[0] + coins[0] * 5 + coins[0] * 10 + coins[0] * 25 + coins[0] * 50 << " cents." << endl;
+		<< coins[0] + coins[1] * 5 + coins[2] * 10 + coins[3] * 25 + coins[4] * 50 << " cents." << endl;
 
 	return doesNameExist("Ariel", names);
 }
