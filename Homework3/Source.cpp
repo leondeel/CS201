@@ -13,9 +13,8 @@ using std::vector;
 using std::min_element;
 using std::istringstream;
 
-
 void printBox(const string& wordToPrint, const int & starLayers);
-
+int newLinesInString(const string& word);
 
 void main() {
 	string line = "Us";
@@ -26,15 +25,22 @@ void main() {
 	i++;
 	printBox(line, i);
 }
+void printBox(const string& word, const int& starLayers) {
+	
+	int boxWidth = word.size() + 2 + 2*starLayers;
+	int boxHeight = newLinesInString(word) + 2 * starLayers;
 
+}
+int newLinesInString(const string& word) {
 
+	int output = 0,
+		lengthOfString = word.size();
 
-
-
-
-
-
-
+	for (int i = 0; i < lengthOfString; i++) {
+		if (word[i] == '\n') output++;
+	}
+	return output;
+}
 
 
 
