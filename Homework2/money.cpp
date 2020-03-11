@@ -15,7 +15,9 @@ using std::istringstream;
 
 void money() {
 	vector<int> coins(5);
-	const vector<string> coinTypes = { "pennies", "nickles", "dimes", "quaters", "half-dollars" };
+	const vector<string> 
+		coinTypes = { "pennies", "nickles", "dimes", "quaters", "half-dollars" }, 
+		coinTypes1 = { "penny", "nickle", "dime", "quater", "half-dollar" };
 	string line;
 
 	for (int i = 0; i < 5; i++) {
