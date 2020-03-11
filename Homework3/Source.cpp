@@ -14,12 +14,20 @@ using std::min_element;
 using std::istringstream;
 
 
-bool doesNameExist(const string& nameToFind, const vector<string>& names);
+void printBox(const string& wordToPrint, const int & starLayers);
 
 
 void main() {
-
+	string line = "Us";
+	int i = 1;
+	printBox(line, i);
+	i++;
+	printBox(line, i);
+	i++;
+	printBox(line, i);
 }
+
+
 
 
 
