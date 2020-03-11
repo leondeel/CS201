@@ -35,7 +35,12 @@ void money() {
 		}
 	}
 	for (int i = 0; i < 5; i++) {
-		cout << "You have " << coins[i] << ' ' << coinTypes[i] << '.' << endl;
+		if (coins[i] != 1) {
+			cout << "You have " << coins[i] << ' ' << coinTypes[i] << '.' << endl;
+		}
+		else {
+			cout << "You have " << coins[i] << ' ' << coinTypes1[i] << '.' << endl;
+		}
 	}
 	cout << "The value of all your coins is "
 		<< coins[0] + coins[1] * 5 + coins[2] * 10 + coins[3] * 25 + coins[4] * 50 << " cents." << endl;
