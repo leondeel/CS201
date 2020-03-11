@@ -13,7 +13,7 @@ using std::vector;
 using std::min_element;
 using std::istringstream;
 
-void printBox(const string& wordInBoxToPrint, const int & starLayers);
+void printBox(const string& wordInBoxToPrint, const int & boxLayers);
 
 void main() {
 	string wordInBox, InputInteger;
@@ -34,26 +34,26 @@ void main() {
 		istringstream instream(InputInteger);
 		instream >> boxLayers ; // Read number from line
 	}
-
 	printBox(wordInBox, boxLayers);
 	boxLayers++;
 	printBox(wordInBox, boxLayers);
 	boxLayers++;
 	printBox(wordInBox, boxLayers);
-
 }
-void printBox(const string& wordInBox, const int& starLayers) {
-	
-	int boxWidth = wordInBox.size() + 2 + 2*starLayers,
-		boxHeight = 3 + 2 * starLayers;
 
-	for (int i = 0; i < starLayers; i++) {
+void printBox(const string& wordInBox, const int& boxLayers) {
+	
+	int boxWidth = wordInBox.size() + 2 + 2*boxLayers,
+		boxHeight = 3 + 2 * boxLayers;
+
+	for (int i = 0; i < boxLayers; i++) {
 		for (int k = 0; k < boxWidth; k++) {
 			cout << '*';
 		}
 		cout << endl;
 	}
-
+	for (int i = 0; i < boxLayers; i++) cout << '*';
+	for (int i = 0; i < boxWidth - 2 * boxLayers; i++) {}
 }
 
 
