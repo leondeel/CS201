@@ -24,8 +24,13 @@ or rather into ASCII order or some equivalent like ASCII or Unicode from least t
 void money();
 
 int main() {
+	vector<string> names;
+	inputNames(names);
+	interesting(names);
+
 	money();
-	return 1;
+
+	return doesNameExist("Ariel", names);
 }
 void inputNames(vector<string>& names) {
 	for (int i = 0; i < 10; i++) {
