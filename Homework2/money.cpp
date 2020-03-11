@@ -17,7 +17,8 @@ void money() {
 	vector<int> coins(5);
 	const vector<string> 
 		coinTypes = { "pennies", "nickles", "dimes", "quaters", "half-dollars" }, 
-		coinTypes1 = { "penny", "nickle", "dime", "quater", "half-dollar" };
+		coinTypes1 = { "penny", "nickle", "dime", "quater", "half-dollar" }; 
+	// I could have come up with a more memory-efficient way to stop outputs of "you have 1 pennies".  But this seemed simpler to write and to grade.
 	string line;
 
 	for (int i = 0; i < 5; i++) {
