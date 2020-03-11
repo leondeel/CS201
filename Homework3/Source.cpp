@@ -36,8 +36,10 @@ void main() {
 	}
 	printBox(wordInBox, boxLayers);
 	boxLayers++;
+	cout << endl << endl;
 	printBox(wordInBox, boxLayers);
 	boxLayers++;
+	cout << endl << endl;
 	printBox(wordInBox, boxLayers);
 }
 
@@ -53,7 +55,23 @@ void printBox(const string& wordInBox, const int& boxLayers) {
 		cout << endl;
 	}
 	for (int i = 0; i < boxLayers; i++) cout << '*';
-	for (int i = 0; i < boxWidth - 2 * boxLayers; i++) {}
+	for (int i = 0; i < boxWidth - 2 * boxLayers; i++) cout << ' ';
+	for (int i = 0; i < boxLayers; i++) cout << '*' << endl;
+
+	for (int i = 0; i < boxLayers; i++) cout << '*';
+	cout << ' ' << wordInBox << ' ';
+	for (int i = 0; i < boxLayers; i++) cout << '*' << endl;
+
+	for (int i = 0; i < boxLayers; i++) cout << '*';
+	for (int i = 0; i < boxWidth - 2 * boxLayers; i++) cout << ' ';
+	for (int i = 0; i < boxLayers; i++) cout << '*' << endl;
+
+	for (int i = 0; i < boxLayers; i++) {
+		for (int k = 0; k < boxWidth; k++) {
+			cout << '*';
+		}
+		cout << endl;
+	}
 }
 
 
