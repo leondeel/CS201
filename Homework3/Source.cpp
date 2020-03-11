@@ -34,12 +34,7 @@ void main() {
 		istringstream instream(InputInteger);
 		instream >> boxLayers ; // Read number from line
 	}
-	printBox(wordInBox, boxLayers);
-	boxLayers++;
-	cout << endl << endl;
-	printBox(wordInBox, boxLayers);
-	boxLayers++;
-	cout << endl << endl;
+	cout << endl;
 	printBox(wordInBox, boxLayers);
 }
 
@@ -56,15 +51,18 @@ void printBox(const string& wordInBox, const int& boxLayers) {
 	}
 	for (int i = 0; i < boxLayers; i++) cout << '*';
 	for (int i = 0; i < boxWidth - 2 * boxLayers; i++) cout << ' ';
-	for (int i = 0; i < boxLayers; i++) cout << '*' << endl;
+	for (int i = 0; i < boxLayers; i++) cout << '*';
+	cout<< endl;
 
 	for (int i = 0; i < boxLayers; i++) cout << '*';
 	cout << ' ' << wordInBox << ' ';
-	for (int i = 0; i < boxLayers; i++) cout << '*' << endl;
+	for (int i = 0; i < boxLayers; i++) cout << '*';
+	cout << endl;
 
 	for (int i = 0; i < boxLayers; i++) cout << '*';
 	for (int i = 0; i < boxWidth - 2 * boxLayers; i++) cout << ' ';
-	for (int i = 0; i < boxLayers; i++) cout << '*' << endl;
+	for (int i = 0; i < boxLayers; i++) cout << '*';
+	cout << endl;
 
 	for (int i = 0; i < boxLayers; i++) {
 		for (int k = 0; k < boxWidth; k++) {
