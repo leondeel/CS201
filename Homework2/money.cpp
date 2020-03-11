@@ -30,6 +30,8 @@ void money() {
 		{
 			cout << "Please type an INTEGER for the number of " << coinTypes[i] << " you have.  It can be negative if you want." << endl
 				<< "How many " << coinTypes[i] << " do you have?" << endl;
+			cin.ignore(INT_MAX);
+			line = "";
 			getline(cin, line);
 			istringstream instream(line);
 			instream >> coins[i]; // Read number from line
