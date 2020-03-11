@@ -21,27 +21,21 @@ void main() {
 	int boxLayers;
 	cout << "Type a string you want in the box:  ";
 	getline(cin, wordInBox);
-	cout << endl;
-	cin.clear();
-	cin.ignore();
 	cout << "Type a non-negative integer for the number of layers you want the box to have:  ";
 	getline(cin, InputInteger);
-	cout << endl;
 	istringstream instream(InputInteger);
 	instream >> boxLayers; // Read number from line
 
 	while (!instream || boxLayers < 0) // Error check
 	{
 		cout << "Please type an INTEGER that is NOT NEGATIVE for the number of layers you want the box to have:  ";
-		cin.clear();
-		cin.ignore();
 		instream.clear();
 		instream.ignore();
 		getline(cin, InputInteger);
-		cout << endl;
 		istringstream instream(InputInteger);
 		instream >> boxLayers ; // Read number from line
 	}
+
 	printBox(wordInBox, boxLayers);
 	boxLayers++;
 	printBox(wordInBox, boxLayers);
@@ -52,19 +46,10 @@ void main() {
 void printBox(const string& wordInBox, const int& starLayers) {
 	
 	int boxWidth = wordInBox.size() + 2 + 2*starLayers;
-	int boxHeight = newLinesInString(wordInBox) + 2 * starLayers;
+	int boxHeight = 3 + 2 * starLayers;
 
 }
-int newLinesInString(const string& wordInBox) {
 
-	int output = 0,
-		lengthOfString = wordInBox.size();
-
-	for (int i = 0; i < lengthOfString; i++) {
-		if (wordInBox[i] == '\n') output++;
-	}
-	return output;
-}
 
 
 
