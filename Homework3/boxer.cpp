@@ -14,8 +14,14 @@ using std::min_element;
 using std::istringstream;
 
 void printBox(const string& wordInBoxToPrint, const int & boxLayers);
+void boxer();
 
-void main() {
+void main() { 
+	
+	boxer();
+}
+
+void boxer() {
 
 	string userContinues = "y";
 
@@ -41,7 +47,7 @@ void main() {
 		}
 		cout << endl;
 		printBox(wordInBox, boxLayers);
-
+		cout << endl;
 		instream.clear();
 		instream.ignore();
 
