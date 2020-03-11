@@ -17,13 +17,20 @@ void printBox(const string& wordToPrint, const int & starLayers);
 int newLinesInString(const string& word);
 
 void main() {
-	string line = "Us";
-	int i = 1;
+	string line;
+	int starLayers;
+	cout << "Type a string you want in the box:  " << endl;
+	getline(cin, line);
+	cin.clear();
+	cin.ignore();
+	cout << "Type a non-negative integer for the number of layers you want the box to have:    " << endl;
+
 	printBox(line, i);
 	i++;
 	printBox(line, i);
 	i++;
 	printBox(line, i);
+
 }
 void printBox(const string& word, const int& starLayers) {
 	
