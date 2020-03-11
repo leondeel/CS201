@@ -16,15 +16,35 @@ using std::istringstream;
 
 bool doesNameExist(const string& nameToFind, const vector<string>& names);
 
-#if 0
-This "interesting" function is for the names.cpp program.It sorts its input into dictionary - order,
-or rather into ASCII order or some equivalent like ASCII or Unicode from least to greatest.
-#endif
-void money();
 
 void main() {
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 void inputNames(vector<string> & names) {
 	for (int i = 0; i < 10; i++) {
 		string name;
