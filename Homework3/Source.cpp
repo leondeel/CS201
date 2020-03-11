@@ -14,7 +14,6 @@ using std::min_element;
 using std::istringstream;
 
 void printBox(const string& wordInBoxToPrint, const int & starLayers);
-int newLinesInString(const string& wordInBox);
 
 void main() {
 	string wordInBox, InputInteger;
@@ -45,8 +44,15 @@ void main() {
 }
 void printBox(const string& wordInBox, const int& starLayers) {
 	
-	int boxWidth = wordInBox.size() + 2 + 2*starLayers;
-	int boxHeight = 3 + 2 * starLayers;
+	int boxWidth = wordInBox.size() + 2 + 2*starLayers,
+		boxHeight = 3 + 2 * starLayers;
+
+	for (int i = 0; i < starLayers; i++) {
+		for (int k = 0; k < boxWidth; k++) {
+			cout << '*';
+		}
+		cout << endl;
+	}
 
 }
 
