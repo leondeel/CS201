@@ -13,38 +13,55 @@ using std::vector;
 using std::min_element;
 using std::istringstream;
 
-void printBox(const string& wordToPrint, const int & starLayers);
-int newLinesInString(const string& word);
+void printBox(const string& wordInBoxToPrint, const int & starLayers);
+int newLinesInString(const string& wordInBox);
 
 void main() {
-	string line;
-	int starLayers;
-	cout << "Type a string you want in the box:  " << endl;
-	getline(cin, line);
+	string wordInBox, InputInteger;
+	int boxLayers;
+	cout << "Type a string you want in the box:  ";
+	getline(cin, wordInBox);
+	cout << endl;
 	cin.clear();
 	cin.ignore();
-	cout << "Type a non-negative integer for the number of layers you want the box to have:    " << endl;
+	cout << "Type a non-negative integer for the number of layers you want the box to have:  ";
+	getline(cin, InputInteger);
+	cout << endl;
+	istringstream instream(InputInteger);
+	instream >> boxLayers; // Read number from line
 
-	printBox(line, i);
-	i++;
-	printBox(line, i);
-	i++;
-	printBox(line, i);
+	while (!instream || boxLayers < 0) // Error check
+	{
+		cout << "Please type an INTEGER that is NOT NEGATIVE for the number of layers you want the box to have:  ";
+		cin.clear();
+		cin.ignore();
+		instream.clear();
+		instream.ignore();
+		getline(cin, InputInteger);
+		cout << endl;
+		istringstream instream(InputInteger);
+		instream >> boxLayers ; // Read number from line
+	}
+	printBox(wordInBox, boxLayers);
+	boxLayers++;
+	printBox(wordInBox, boxLayers);
+	boxLayers++;
+	printBox(wordInBox, boxLayers);
 
 }
-void printBox(const string& word, const int& starLayers) {
+void printBox(const string& wordInBox, const int& starLayers) {
 	
-	int boxWidth = word.size() + 2 + 2*starLayers;
-	int boxHeight = newLinesInString(word) + 2 * starLayers;
+	int boxWidth = wordInBox.size() + 2 + 2*starLayers;
+	int boxHeight = newLinesInString(wordInBox) + 2 * starLayers;
 
 }
-int newLinesInString(const string& word) {
+int newLinesInString(const string& wordInBox) {
 
 	int output = 0,
-		lengthOfString = word.size();
+		lengthOfString = wordInBox.size();
 
 	for (int i = 0; i < lengthOfString; i++) {
-		if (word[i] == '\n') output++;
+		if (wordInBox[i] == '\n') output++;
 	}
 	return output;
 }
