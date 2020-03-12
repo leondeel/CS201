@@ -22,17 +22,14 @@ bool userWantsToExit();
 void main() { 
 	
 	boxer();
+	while (!userWantsToExit()) {
+		boxer();
+	}
 }
 
 
 
-
 void boxer() {
-
-	string userContinues = "y";
-
-	while (userContinues[0] == 'y' || userContinues[0] == 'Y') {
-
 		string wordInBox;
 		cout << "Type a string you want in the box:  ";
 		getline(cin, wordInBox);
@@ -41,10 +38,6 @@ void boxer() {
 		cout << endl;
 		printBox(wordInBox, boxLayers);
 		cout << endl;
-
-		cout << "Do you wish to repeat that?  \nIf so, enter \"yes\". Otherwise, enter anything else that doesn't start with the letter \"y\"....   " << endl;
-		getline(cin, userContinues);
-	}
 }
 
 void printBox(const string& wordInBox, const int& boxLayers) {
@@ -104,9 +97,11 @@ int getUserInt() {
 }
 
 bool userWantsToExit() {
+	cin.clear();
+	cin.ignore();
 	string userExit;
 	cout << "Do you wish to repeat that?  \nIf so, enter \"yes\". Otherwise, enter anything else that doesn't start with the letter \"y\"....   " << endl;
 	getline(cin, userExit);
-	if (userExit[0] != 'Y' || userExit[0] != 'y') return NULL;
+	if (userExit[0] != 'Y' || userExit[0] != 'y') return 0;
 	else return 1;
 }
