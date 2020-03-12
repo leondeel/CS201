@@ -17,7 +17,7 @@ using std::istringstream;
 void printBox(const string& wordInBoxToPrint, const int & boxLayers);
 int getUserInt();
 void boxer();
-
+bool userWantsToExit();
 
 void main() { 
 	
@@ -41,7 +41,6 @@ void boxer() {
 		cout << endl;
 		printBox(wordInBox, boxLayers);
 		cout << endl;
-
 
 		cout << "Do you wish to repeat that?  \nIf so, enter \"yes\". Otherwise, enter anything else that doesn't start with the letter \"y\"....   " << endl;
 		getline(cin, userContinues);
@@ -102,4 +101,12 @@ int getUserInt() {
 	instream.ignore();
 	cout << "Thank you" << endl;
 	return boxLayers;
+}
+
+bool userWantsToExit() {
+	string userExit;
+	cout << "Do you wish to repeat that?  \nIf so, enter \"yes\". Otherwise, enter anything else that doesn't start with the letter \"y\"....   " << endl;
+	getline(cin, userExit);
+	if (userExit[0] != 'Y' || userExit[0] != 'y') return NULL;
+	else return 1;
 }
