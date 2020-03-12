@@ -19,7 +19,7 @@ void boxer() {
 		cout << "Type a string you want in the box:  ";
 		getline(cin, wordInBox);
 		cout << "Type a non-negative integer for the number of layers you want the box to have:  ";
-		int boxLayers = getUserInt(); //This gets a positive integer from the user.
+		int boxLayers = getUserInt(); //This gets a positive integer from the user and error checks it.
 		cout << endl;
 		printBox(wordInBox, boxLayers);
 		cout << endl;
