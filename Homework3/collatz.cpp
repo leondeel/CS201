@@ -19,20 +19,21 @@ bool userWantsToExit();
 
 void collatz() {
 	int k;
-	label :
-	cout << "Type a positive integer:  ";
-	k = getUserInt();
-	cout << k << endl;
-	while (k != 1) {
-		if (k % 2) {
-			k = 3 * k + 1;
-			cout << k << endl;
+
+	do {
+		cout << "Type a positive integer:  ";
+		k = getUserInt();
+		cout << endl << k << endl;
+		while (k != 1) {
+			if (k % 2) {
+				k = 3 * k + 1;
+				cout << k << endl;
+			}
+			else {
+				k = k / 2;
+				cout << k << endl;
+			}
 		}
-		else {
-			k = k / 2;
-			cout << k << endl;
-		}
-	}
-	if (!userWantsToExit) goto label;
+	} while (!userWantsToExit());
 }
 
