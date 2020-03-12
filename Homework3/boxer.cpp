@@ -14,20 +14,6 @@ using std::min_element;
 using std::istringstream;
 
 
-void printBox(const string& wordInBoxToPrint, const int & boxLayers);
-int getUserInt();
-void boxer();
-bool userWantsToExit();
-
-void main() { 
-
-	boxer();
-	while ( !userWantsToExit()) {
-		boxer();
-	}
-}
-
-
 void boxer() {
 		string wordInBox;
 		cout << "Type a string you want in the box:  ";
