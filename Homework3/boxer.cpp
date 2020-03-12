@@ -15,7 +15,6 @@ using std::istringstream;
 
 void printBox(const string& wordInBoxToPrint, const int& boxLayers);
 int getUserInt();
-void boxer();
 bool userWantsToExit();
 
 void boxer() {

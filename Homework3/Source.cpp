@@ -18,9 +18,9 @@ void printBox(const string& wordInBoxToPrint, const int& boxLayers);
 int getUserInt();
 void boxer();
 bool userWantsToExit();
+void collatz();
 
 void main() {
-	
-	boxer();
 
+	collatz();
 }
