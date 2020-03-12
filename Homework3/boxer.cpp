@@ -13,6 +13,7 @@ using std::vector;
 using std::min_element;
 using std::istringstream;
 
+
 void printBox(const string& wordInBoxToPrint, const int & boxLayers);
 int getUserInt();
 void boxer();
@@ -22,6 +23,9 @@ void main() {
 	
 	boxer();
 }
+
+
+
 
 void boxer() {
 
@@ -33,7 +37,7 @@ void boxer() {
 		cout << "Type a string you want in the box:  ";
 		getline(cin, wordInBox);
 		cout << "Type a non-negative integer for the number of layers you want the box to have:  ";
-		int boxLayers = getUserInt();
+		int boxLayers = getUserInt(); //This gets a positive integer from the user.
 		cout << endl;
 		printBox(wordInBox, boxLayers);
 		cout << endl;
@@ -85,9 +89,9 @@ int getUserInt() {
 	istringstream instream(InputInteger);
 	instream >> boxLayers; // Read number from line
 
-	while (!instream || boxLayers < 0) // Error check
+	while (!instream || boxLayers < 1) // Error check
 	{
-		cout << "Please type an INTEGER that is NOT NEGATIVE:  ";
+		cout << "Please type a positive integer only:  ";
 		instream.clear();
 		instream.ignore();
 		getline(cin, InputInteger);
@@ -96,5 +100,6 @@ int getUserInt() {
 	}
 	instream.clear();
 	instream.ignore();
+	cout << "Thank you" << endl;
 	return boxLayers;
 }
