@@ -20,13 +20,12 @@ void boxer();
 bool userWantsToExit();
 
 void main() { 
-	
+
 	boxer();
-	while (!userWantsToExit()) {
+	while ( !userWantsToExit()) {
 		boxer();
 	}
 }
-
 
 
 void boxer() {
@@ -97,11 +96,12 @@ int getUserInt() {
 }
 
 bool userWantsToExit() {
-	cin.clear();
-	cin.ignore();
+
 	string userExit;
-	cout << "Do you wish to repeat that?  \nIf so, enter \"yes\". Otherwise, enter anything else that doesn't start with the letter \"y\"....   " << endl;
+	cout << "\nDo you wish to repeat that?  If so, enter \"yes\". \nOtherwise, if you wish to exit, enter anything else that doesn't start with the letter \"y\"....   " << endl;
 	getline(cin, userExit);
-	if (userExit[0] != 'Y' || userExit[0] != 'y') return 0;
-	else return 1;
+	if (userExit[0] == 'Y' || userExit[0] == 'y') { 
+		return false; 
+	}
+	return true;
 }
