@@ -22,7 +22,5 @@ bool userWantsToExit();
 void main() {
 	
 	boxer();
-	while (!userWantsToExit()) {
-		boxer();
-	}
+
 }

@@ -20,6 +20,7 @@ void boxer();
 bool userWantsToExit();
 
 void collatz() {
+	cout << "Type a positive integer." << endl;
 	int k = getUserInt();
 
 }

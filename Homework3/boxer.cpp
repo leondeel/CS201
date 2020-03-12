@@ -15,6 +15,8 @@ using std::istringstream;
 
 
 void boxer() {
+	bool userQuits = 0;
+	while(!userQuits) {
 		string wordInBox;
 		cout << "Type a string you want in the box:  ";
 		getline(cin, wordInBox);
@@ -23,6 +25,8 @@ void boxer() {
 		cout << endl;
 		printBox(wordInBox, boxLayers);
 		cout << endl;
+		userQuits = userWantsToExit();
+	}
 }
 
 void printBox(const string& wordInBox, const int& boxLayers) {
