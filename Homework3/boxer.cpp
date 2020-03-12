@@ -65,36 +65,3 @@ void printBox(const string& wordInBox, const int& boxLayers) {
 		cout << endl;
 	}
 }
-
-int getUserInt() {
-	string InputInteger;
-	int boxLayers;
-	getline(cin, InputInteger);
-	istringstream instream(InputInteger);
-	instream >> boxLayers; // Read number from line
-
-	while (!instream || boxLayers < 1) // Error check
-	{
-		cout << "Please type a positive integer only:  ";
-		instream.clear();
-		instream.ignore();
-		getline(cin, InputInteger);
-		istringstream instream(InputInteger);
-		instream >> boxLayers; // Read number from line
-	}
-	instream.clear();
-	instream.ignore();
-	cout << "Thank you" << endl;
-	return boxLayers;
-}
-
-bool userWantsToExit() {
-
-	string userExit;
-	cout << "\nDo you wish to repeat that?  If so, enter \"yes\". \nOtherwise, if you wish to exit, enter anything else that doesn't start with the letter \"y\"....   " << endl;
-	getline(cin, userExit);
-	if (userExit[0] == 'Y' || userExit[0] == 'y') { 
-		return false; 
-	}
-	return true;
-}
