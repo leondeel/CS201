@@ -18,8 +18,17 @@ int getUserInt();
 bool userWantsToExit();
 
 void collatz() {
-	cout << "Type a positive integer:  ";
+	cout << "Type a positive integer:  " << endl;
 	int k = getUserInt();
-	cout << k << endl;
+	while (k != 1) {
+		if (k % 2) {
+			k = 3 * k + 1;
+			cout << k << endl;
+		}
+		else {
+			k = k / 2;
+			cout << k << endl;
+		}
+	}
 }
 
