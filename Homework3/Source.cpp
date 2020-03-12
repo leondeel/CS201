@@ -23,12 +23,13 @@ void collatz();
 void main() {
 
 	collatz();
+	boxer();
 }
 
 //Below lie definitions for my own functions used in this homework, for multiple programs and different parts of the homework.
 
-//This prompts the user for a positive integer, and it makes sure that is what the user actually enters.
-int getUserInt() {
+
+int getUserInt() {//This prompts the user for a positive integer and error-checks it.
 	string InputInteger;
 	int boxLayers;
 	getline(cin, InputInteger);
@@ -46,7 +47,7 @@ int getUserInt() {
 	}
 	instream.clear();
 	instream.ignore();
-	cout << "Thank you" << endl;
+	cout << "Thank you!" << endl;
 	return boxLayers;
 }
 
@@ -54,7 +55,7 @@ int getUserInt() {
 bool userWantsToExit() {
 
 	string userExit;
-	cout << "\nDo you wish to repeat that?  If so, enter \"yes\". \nOtherwise, if you wish to exit, enter anything else that doesn't start with the letter \"y\"....   " << endl;
+	cout << "\n\nDo you wish to repeat that?  If so, enter \"yes\". \nOtherwise, if you wish to exit, enter anything else that doesn't start with the letter \"y\"....   " << endl;
 	getline(cin, userExit);
 	if (userExit[0] == 'Y' || userExit[0] == 'y') {
 		return false;
