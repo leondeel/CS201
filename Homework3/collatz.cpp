@@ -19,3 +19,7 @@ int getUserInt();
 void boxer();
 bool userWantsToExit();
 
+void collatz() {
+	int k = getUserInt();
+
+}
