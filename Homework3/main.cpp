@@ -5,6 +5,8 @@ void main() {
 
 	collatz();
 	boxer();
-	keepWindowOpen();
+
+	test();
+
 }
 

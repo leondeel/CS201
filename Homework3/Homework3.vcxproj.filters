@@ -24,7 +24,7 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="myOwnFunctions.cpp">
+    <ClCompile Include="std_lib_facilities_test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
