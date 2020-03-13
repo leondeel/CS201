@@ -1,33 +1,6 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
-#include <string>
-#include <sstream>
+#include "std_lib_facilities.h"
 
-using std::cout;
-using std::cin;
-using std::endl;
-using std::string;
-using std::getline;
-using std::vector;
-using std::min_element;
-using std::istringstream;
-
-
-void printBox(const string& wordInBoxToPrint, const int& boxLayers);
-int getUserInt();
-void boxer();
-bool userWantsToExit();
-void collatz();
-
-void main() {
-
-	collatz();
-	boxer();
-}
-
-
-//Below lie definitions for my own functions used in this homework for multiple programs and different parts of the homework.
+//Below lie definitions for my own functions used in this homework and even other homeworks.
 
 int getUserInt() {//This prompts the user for a positive integer and error-checks it.
 	string InputInteger;

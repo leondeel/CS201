@@ -23,4 +23,10 @@ using std::vector;
 using std::min_element;
 using std::istringstream;
 
+void printBox(const string& wordInBoxToPrint, const int& boxLayers);
+int getUserInt();
+void boxer();
+bool userWantsToExit();
+void collatz();
+
 #endif // !_STD_FACILITIES_H_

@@ -1,20 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
-#include <string>
-#include <sstream>
-
-using std::cout;
-using std::cin;
-using std::endl;
-using std::string;
-using std::getline;
-using std::vector;
-using std::min_element;
-using std::istringstream;
-
-int getUserInt();
-bool userWantsToExit();
+#include "std_lib_facilities.h"
 
 void collatz() {
 	int k;
