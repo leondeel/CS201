@@ -1,10 +1,9 @@
 #include "std_lib_facilities.h"
 
-void collatz() {
+void main() {
 	int k;
 
 	do {
-		cout << "Type a positive integer:  ";
 		k = getUserInt();
 		cout << endl << k << ", ";
 		while (k != 1) {

@@ -23,23 +23,13 @@ using std::vector;
 using std::min_element;
 using std::istringstream;
 
-void printBox(const string& wordInBoxToPrint, const int& boxLayers);
-void boxer();
-void collatz();
-void test();
-
-inline void keepWindowOpen() {//I have to say that I can't see any bugs in the inline function.
-	string tmp;
-	cin.clear();
-	cout << "Press ENTER to exit the program." << endl;
-	getline(cin, tmp);
-}
 
 //Below lie definitions for my own functions used in this homework and even other future homework.
 
 inline int getUserInt() {//This prompts the user for a positive integer and error-checks it.
 	string InputInteger;
 	int boxLayers;
+	cout << "Type a positive integer:  ";
 	getline(cin, InputInteger);
 	istringstream instream(InputInteger);
 	instream >> boxLayers; // Read number from line
