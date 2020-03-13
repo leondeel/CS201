@@ -5,6 +5,7 @@ void test() {
 	int k;
 	do {
 		k = getUserInt();
+		cout << "You entered " << k <<'.'<< endl;
 	} while (!userWantsToExit);
 
 

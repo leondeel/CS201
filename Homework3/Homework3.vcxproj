@@ -141,6 +141,7 @@
     <ClCompile Include="boxer.cpp" />
     <ClCompile Include="collatz.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="kelvin.cpp" />
     <ClCompile Include="std_lib_facilities_test.cpp" />
   </ItemGroup>
   <ItemGroup>
