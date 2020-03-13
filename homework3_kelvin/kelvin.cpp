@@ -10,5 +10,5 @@ int main()
 	double c = 0;
 	cin >> d;
 	double k = ctok("c");
-	Cout << k << '/n';	
+	Cout << k << '/n';
 }

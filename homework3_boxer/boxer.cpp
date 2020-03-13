@@ -1,7 +1,7 @@
 #include "std_lib_facilities.h"
 
 
-void boxer() {
+void main() {
 
 	do {
 		string wordInBox;
@@ -17,8 +17,8 @@ void boxer() {
 }
 
 void printBox(const string& wordInBox, const int& boxLayers) {
-	
-	int boxWidth = wordInBox.size() + 2 + 2*boxLayers,
+
+	int boxWidth = wordInBox.size() + 2 + 2 * boxLayers,
 		boxHeight = 3 + 2 * boxLayers;
 
 	for (int i = 0; i < boxLayers; i++) {
@@ -30,7 +30,7 @@ void printBox(const string& wordInBox, const int& boxLayers) {
 	for (int i = 0; i < boxLayers; i++) cout << '*';
 	for (int i = 0; i < boxWidth - 2 * boxLayers; i++) cout << ' ';
 	for (int i = 0; i < boxLayers; i++) cout << '*';
-	cout<< endl;
+	cout << endl;
 
 	for (int i = 0; i < boxLayers; i++) cout << '*';
 	cout << ' ' << wordInBox << ' ';
