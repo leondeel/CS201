@@ -26,8 +26,8 @@ void main() {
 	boxer();
 }
 
-//Below lie definitions for my own functions used in this homework, for multiple programs and different parts of the homework.
 
+//Below lie definitions for my own functions used in this homework for multiple programs and different parts of the homework.
 
 int getUserInt() {//This prompts the user for a positive integer and error-checks it.
 	string InputInteger;
