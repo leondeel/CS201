@@ -1,7 +1,7 @@
 
 #ifndef _STD_FACILITIES_H_
 #define _STD_FACILITIES_H_
-	
+
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -28,5 +28,12 @@ int getUserInt();
 void boxer();
 bool userWantsToExit();
 void collatz();
+
+inline void keepWindowOpen() {
+	string tmp;
+	cin.clear();
+	cout << "Press ENTER to exit the program." << endl;
+	getline(cin, tmp);
+}
 
 #endif // !_STD_FACILITIES_H_
