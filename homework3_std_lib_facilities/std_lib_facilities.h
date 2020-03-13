@@ -60,7 +60,7 @@ inline  int getUserInt() {//This prompts the user for a positive integer and err
 inline bool userWantsToExit() {
 
 	string userExit;
-	cout << "\n\nDo you wish to repeat that?  If so, enter \"yes\". \nOtherwise, if you wish to exit, enter anything else that doesn't start with the letter \"y\"....   " << endl;
+	cout << "\n\nDo you wish to repeat that?  If so, enter \"yes\". \nIf not, enter anything else that doesn't start with the letter \"y\"....   " << endl;
 	getline(cin, userExit);
 	if (userExit[0] == 'Y' || userExit[0] == 'y') {
 		return false;

@@ -8,7 +8,7 @@ void main() {
 		cout << "Hello!" << endl;
 		k = getUserInt();
 		cout << "You entered " << k << '.' << endl;
-	} while (!userWantsToExit);
+	} while (!userWantsToExit());
 
 
 	keepWindowOpen();
