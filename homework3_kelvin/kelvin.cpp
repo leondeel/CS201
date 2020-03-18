@@ -4,15 +4,22 @@
 
 double ctok(double c)
 {
-	int k = c + 273.15;
-	return int;
+	if (c >= -273.15)
+		return c + 273.15;
+	else return -1;
 }
 int main()
 {
 	double c;
-	cin >> d;
-	double k = ctok("c");
-	cout << k << '/n';
+	cout << "Enter a temperature in Celcius to convert to Kelvin:  ";
+	cin >> c;
+	double k = ctok(c);
+	while(k == -1) {
+		cout << "ERROR. Input must be equal to or greater than -273.15.  Try again:  ";
+		cin.clear();
+		cin >> c;
+	}
+	cout <<"Your temperature in kelvin is "<< k << " ."<<endl;
 }
 
 
@@ -26,7 +33,7 @@ double ctok(double c)
 int main()
 {
 	double c = 0;
-	cin >> d;// The letter d should be replaced with a c.
+	cin >> d;// The letter d should be replaced with the letter c.
 	double k = ctok("c");// The string "c" should be replaced with a double.
 	Cout << k << '/n'; //What should be written is "cout", not "Cout".
 }
