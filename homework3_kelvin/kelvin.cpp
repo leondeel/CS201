@@ -4,6 +4,33 @@
 
 double ctok(double c)
 {
+
+
+string InputInteger;
+		int boxLayers;
+		cout << "Please enter a positive integer:  ";
+		getline(cin, InputInteger);
+		istringstream instream(InputInteger);
+		instream >> boxLayers; // Read number from line
+
+		while (!instream || boxLayers < 1) // Error check
+		{
+			cout << "Please enter a positive integer only:  ";
+			instream.clear();
+			instream.ignore();
+			getline(cin, InputInteger);
+			istringstream instream(InputInteger);
+			instream >> boxLayers; // Read number from line
+		}
+		instream.clear();
+		instream.ignore();
+		cout << "Thank you!" << endl;
+		return boxLayers;
+
+
+
+
+
 	if (c < -273.15)
 		return -1; //-1 means an error.  Celsius can't go below -273.15.
 	else return c + 273.15;
