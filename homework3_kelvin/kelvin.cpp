@@ -2,7 +2,7 @@
 #include "std_lib_facilities.h"
 
 
-double ctok()
+double ctok() //I copied, pasted, and edited this code from previous homework.  In the future, intend to write a generalized version of this function.
 {
 string inputDouble;
 		double outputDouble;
@@ -13,8 +13,8 @@ string inputDouble;
 
 		while (!instream || outputDouble < -273.15) // Error check
 		{
-			cout << "Make sure you enter a NUMBER that is geater than or equal to -273.15.  It impossible for anything to be colder than -273.15 Celsius."<<endl
-				<< "Enter a temperature in Celsius to convert to Kelvin:  ";
+			cout << "Make sure you enter a NUMBER that is geater than or equal to -273.15"<<endl
+				<<"It impossible for anything to be colder than -273.15 Celsius. Enter a temperature in Celsius to convert to Kelvin:  ";
 			instream.clear();
 			instream.ignore();
 			getline(cin, inputDouble);
