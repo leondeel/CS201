@@ -13,7 +13,8 @@ string inputDouble;
 
 		while (!instream || outputDouble < -273.15) // Error check
 		{
-			cout << "It is physically impossible for anything to be colder than -273.15 Celsius.\nEnter a higher temperature:  ";
+			cout << "Make sure you enter a NUMBER that is geater than or equal to -273.15.  It impossible for anything to be colder than -273.15 Celsius."<<endl
+				<< "Enter a temperature in Celsius to convert to Kelvin:  ";
 			instream.clear();
 			instream.ignore();
 			getline(cin, inputDouble);
