@@ -32,29 +32,27 @@ inline void keepWindowOpen() {//I have to say that I can't see any bugs in the i
 	getline(cin, tmp);
 }
 
-double getDouble() //I copied, pasted, and edited this code from previous homework.  In the future, intend to write a generalized version of this function.
+double getDouble() //This gets a double from the user and somewhat error-checks it, forcing the user to enter an actual number...hopefully.
 {
 	string inputDouble;
 	double outputDouble;
-	cout << "Enter a temperature in Celsius to convert to Kelvin:  ";
 	getline(cin, inputDouble);
 	istringstream instream(inputDouble);
 	instream >> outputDouble; // Read number from line
 
-	while (!instream || outputDouble < -273.15) // Error check
+	while (!instream ) // Error check
 	{
-		cout << "Make sure you enter a NUMBER that is geater than or equal to -273.15" << endl
-			<< "It impossible for anything to be colder than -273.15 Celsius. Enter a temperature in Celsius to convert to Kelvin:  ";
+		cout << "Make sure you enter a NUMBER:  ";
 		instream.clear();
 		instream.ignore();
 		getline(cin, inputDouble);
 		istringstream instream(inputDouble);
-		instream >> outputDouble; // Read number from line
+		instream >> outputDouble; // Read number from line again to repeat process.
 	}
 	instream.clear();
 	instream.ignore();
-	cout << "Thank you!" << endl;
-	return outputDouble + 273.15;
+	cout << "Thank you!  You entered " << outputDouble << endl;
+	return outputDouble;
 
 }
 
