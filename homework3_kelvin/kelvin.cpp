@@ -6,8 +6,8 @@ double ctok(double c)
 {
 
 
-string InputInteger;
-		int boxLayers;
+string Inputdouble;
+		double boxLayers;
 		cout << "Please enter a positive integer:  ";
 		getline(cin, InputInteger);
 		istringstream instream(InputInteger);
