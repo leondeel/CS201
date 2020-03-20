@@ -50,5 +50,7 @@ int main()
 	cin >> d;// The letter d should be replaced with the letter c.
 	double k = ctok("c");// The string "c" should be replaced with a double: Just the letter c without quotation marks.
 	Cout << k << '/n'; //What should be written is "cout", not "Cout".
+
+	//By the way, this code does not account for the input not being a double.
 }
 #endif
