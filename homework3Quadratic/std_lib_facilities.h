@@ -32,6 +32,33 @@ inline void keepWindowOpen() {//I have to say that I can't see any bugs in the i
 	getline(cin, tmp);
 }
 
+double getDouble() //I copied, pasted, and edited this code from previous homework.  In the future, intend to write a generalized version of this function.
+{
+	string inputDouble;
+	double outputDouble;
+	cout << "Enter a temperature in Celsius to convert to Kelvin:  ";
+	getline(cin, inputDouble);
+	istringstream instream(inputDouble);
+	instream >> outputDouble; // Read number from line
+
+	while (!instream || outputDouble < -273.15) // Error check
+	{
+		cout << "Make sure you enter a NUMBER that is geater than or equal to -273.15" << endl
+			<< "It impossible for anything to be colder than -273.15 Celsius. Enter a temperature in Celsius to convert to Kelvin:  ";
+		instream.clear();
+		instream.ignore();
+		getline(cin, inputDouble);
+		istringstream instream(inputDouble);
+		instream >> outputDouble; // Read number from line
+	}
+	instream.clear();
+	instream.ignore();
+	cout << "Thank you!" << endl;
+	return outputDouble + 273.15;
+
+}
+
+
 //Below lie definitions for my own functions used in this homework and even other future homework.
 inline  int getUserInt() {//This prompts the user for a positive integer and error-checks it.
 	string InputInteger;
