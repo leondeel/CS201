@@ -2,55 +2,37 @@
 #include "std_lib_facilities.h"
 
 
-double ctok(double c)
+double ctok()
 {
+string inputDouble;
+		double outputDouble;
+		cout << "Enter a temperature in Celsius to convert to Kelvin:  ";
+		getline(cin, inputDouble);
+		istringstream instream(inputDouble);
+		instream >> outputDouble; // Read number from line
 
-
-string Inputdouble;
-		double boxLayers;
-		cout << "Please enter a positive integer:  ";
-		getline(cin, InputInteger);
-		istringstream instream(InputInteger);
-		instream >> boxLayers; // Read number from line
-
-		while (!instream || boxLayers < 1) // Error check
+		while (!instream || outputDouble < -273.15) // Error check
 		{
-			cout << "Please enter a positive integer only:  ";
+			cout << "It is physically impossible for anything to be colder than -273.15 Celsius.\nEnter a higher temperature:  ";
 			instream.clear();
 			instream.ignore();
-			getline(cin, InputInteger);
-			istringstream instream(InputInteger);
-			instream >> boxLayers; // Read number from line
+			getline(cin, inputDouble);
+			istringstream instream(inputDouble);
+			instream >> outputDouble; // Read number from line
 		}
 		instream.clear();
 		instream.ignore();
 		cout << "Thank you!" << endl;
-		return boxLayers;
+		return outputDouble;
 
-
-
-
-
-	if (c < -273.15)
-		return -1; //-1 means an error.  Celsius can't go below -273.15.
-	else return c + 273.15;
 }
 int main()
 {
-	double c;
+	double k;
 	do {
-		cout << "Enter a temperature in Celcius to convert to Kelvin:  ";
-		cin >> c;
-		double k = ctok(c);
-		while (k == -1) {
-			cout << "ERROR. Input must be equal to or greater than -273.15.  Try again:  ";
-			cin.clear();
-			cin >> c;
-			k = ctok(c);
-		}
+		k = ctok();
 		cout << "Your temperature in kelvin is " << k << " ." << endl;
-		cin.clear();
-		cin.ignore();
+
 	} while (!userWantsToExit());
 }
 
