@@ -29,7 +29,7 @@ void main() {
 			cout << "The roots of this polynomial are two complex conjugates." << endl;
 		}
 		else {
-			cout << "Your roots are " << roots[1] << " and " << roots[2] << endl;
+			cout << "Your two real roots are " << roots[1] << " and " << roots[2] << endl;
 		}
 	} while (!userWantsToExit());
 }
