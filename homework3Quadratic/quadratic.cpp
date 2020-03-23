@@ -1,16 +1,17 @@
 #include "std_lib_facilities.h"
+using std::tuple;
 
 
-vector<double> quadratic(const double &a, const double &b, const double &c) {
+tuple<bool, double, double> quadratic(const double& a, const double& b, const double& c) {
 	double discriminant = b*b - 4 * a * c;
 	double T = -b / (2 * a);
 	//In this case the roots are complex and they are conjugates. 
 	//So we only need to communicate the real part and the positive version of the complex part to have all the information we need.
 		if (discriminant < 0) {
-			return {0, T, sqrt(abs(discriminant)) / (2 * a), };  //I will let 0 indicate that the roots are complex.
+			return {false, T, sqrt(abs(discriminant)) / (2 * a), };  //I will let 0 indicate that the roots are complex.
 	    }
 		else {//I will let 1 indicate the roots are real.
-			return { 1, T + sqrt(discriminant) / (2 * a), T - sqrt(discriminant) / (2 * a) };
+			return { true, T + sqrt(discriminant) / (2 * a), T - sqrt(discriminant) / (2 * a) };
 		}
 }
 
@@ -24,12 +25,14 @@ void main() {
 		double b = getDouble();
 		cout << "c = ";
 		double c = getDouble();
-		vector<double> roots = quadratic(a, b, c);
-		if (roots[0] == 0) {
-			cout << "The roots of this polynomial are two complex conjugates." << endl;
+
+		tuple<bool, double, double>  {isReal, root1, root2} = quadratic(a, b, c);
+
+		if (isReal) {
+			cout << "Your two real roots are " << root1 << " and " << root2 << endl;
 		}
 		else {
-			cout << "Your two real roots are " << roots[1] << " and " << roots[2] << endl;
+			cout << "The roots of this polynomial are two complex conjugates:  "<< root1 << " + " <<root2<< "  and  "<< root1 << " - " << root2 << endl;
 		}
 	} while (!userWantsToExit());
 }
