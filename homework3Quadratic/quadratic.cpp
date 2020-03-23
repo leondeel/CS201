@@ -1,12 +1,16 @@
 #include "std_lib_facilities.h"
+#include <stdexcept>
+#include <tuple>
 using std::tuple;
+using std::get;
+
 
 
 tuple<bool, double, double> quadratic(const double& a, const double& b, const double& c) {
 	double discriminant = b*b - 4 * a * c;
 	double T = -b / (2 * a);
 	//In this case the roots are complex and they are conjugates. 
-	//So we only need to communicate the real part and the positive version of the complex part to have all the information we need.
+	//So we only need to communicate the real part and the positive version of the imaginary part to have all the information we need.
 		if (discriminant < 0) {
 			return {false, T, sqrt(abs(discriminant)) / (2 * a), };  //I will let 0 indicate that the roots are complex.
 	    }
@@ -18,7 +22,9 @@ tuple<bool, double, double> quadratic(const double& a, const double& b, const do
 
 void main() {
 	do {
-		cout << "Let ( a*x^2 + b*x + c ) be  a single-variable polynomial, with variable x, with real coeffcients a,b,c.  Now, please define a,b,c." << endl;
+		cout << 
+			"Let ( a*x^2 + b*x + c ) be a single-variable polynomial, with variable x, with real coeffcients a,b,c.  Now, please define a,b,c." 
+			<< endl;
 		cout << "a = ";
 		double a = getDouble();
 		cout << "b = ";
@@ -26,13 +32,14 @@ void main() {
 		cout << "c = ";
 		double c = getDouble();
 
-		tuple<bool, double, double>  {isReal, root1, root2} = quadratic(a, b, c);
+		auto roots = quadratic(a, b, c);
 
-		if (isReal) {
-			cout << "Your two real roots are " << root1 << " and " << root2 << endl;
+		if (get<0>(roots)) {
+			cout << "Your two real roots are " << get<1>(roots) << " and " << get<2>(roots) << endl;
 		}
 		else {
-			cout << "The roots of this polynomial are two complex conjugates:  "<< root1 << " + " <<root2<< "  and  "<< root1 << " - " << root2 << endl;
+			cout << "The roots of this polynomial are two complex conjugates:  " << get<1>(roots) << " + i* " 
+				<< get<2>(roots) << "  and  "<< get<1>(roots) << " - i* " << get<2>(roots) << endl;
 		}
 	} while (!userWantsToExit());
 }
