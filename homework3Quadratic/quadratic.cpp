@@ -33,7 +33,7 @@ void main() {
 	do {//This do-while loop will terminate when the user indicates he wants to stop running the program.
 		cout << 
 			"Let ( a*x^2 + b*x + c ) be a second-degree, single-variable polynomial, with variable x, with REAL coeffcients a,b,c."<<endl<<
-			"  Now, please define a,b,c.  Note that 'a' cannot be zero, or else the polynomial is not second-degree." 
+			"Now, please define a,b,c.  Note that 'a' cannot be zero, or else the polynomial is not second-degree." 
 			<< endl;
 		double a;
 		do {//This do-while loops makes sure that 'a' doesn't equal zero.  if 'a' is zero the quadratic formula fails.

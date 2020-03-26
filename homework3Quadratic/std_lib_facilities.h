@@ -26,7 +26,7 @@ using std::istringstream;
 
 
 
-
+ 
 double getDouble() //This gets a double from the user and somewhat error-checks it, forcing the user to enter an actual number...most of the time.
 //This istringstream has bugs.  Calling instream.clear() doesn't do enough to reset everything back from scratch.  
 //I looked over forums, but to no avail.  I blame the makers of istringstream.
@@ -41,14 +41,14 @@ double getDouble() //This gets a double from the user and somewhat error-checks 
 	while (!instream ) // Error check
 	{//Inside the loop, istringstream acts weird sometimes.  It will return a double if you just type "enter".
 		cout << "Make sure you enter a NUMBER:  ";
+		cin.clear();
 		instream.clear();
-		instream.ignore();
 		getline(cin, inputDouble);
 		istringstream instream(inputDouble);
 		instream >> outputDouble; // Read number from line again to repeat process.
 	}
 	instream.clear();
-	instream.ignore();
+	cin.clear();
 	cout << "Thank you!  You entered " << outputDouble << endl;
 	return outputDouble;
 
