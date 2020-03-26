@@ -1,3 +1,7 @@
+//Written by M. Ariel Hernandez
+// For the "quadratic" portion of homework 3, of CS 201, of Spring 2020 at UAF.
+
+
 #include "std_lib_facilities.h"
 #include <stdexcept>
 #include <tuple>

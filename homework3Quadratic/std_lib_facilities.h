@@ -25,6 +25,8 @@ using std::min_element;
 using std::istringstream;
 
 
+
+
 double getDouble() //This gets a double from the user and somewhat error-checks it, forcing the user to enter an actual number...most of the time.
 //This istringstream has bugs.  Calling instream.clear() doesn't do enough to reset everything back from scratch.
 {
