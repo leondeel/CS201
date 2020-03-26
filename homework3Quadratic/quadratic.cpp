@@ -23,12 +23,13 @@ tuple<bool, double, double> quadratic(const double& a, const double& b, const do
 void main() {
 	do {
 		cout << 
-			"Let ( a*x^2 + b*x + c ) be a second-degree, single-variable polynomial, with variable x, with REAL coeffcients a,b,c."<<
+			"Let ( a*x^2 + b*x + c ) be a second-degree, single-variable polynomial, with variable x, with REAL coeffcients a,b,c."<<endl<<
 			"  Now, please define a,b,c.  Note that 'a' cannot be zero, or else the polynomial is not second-degree." 
 			<< endl;
 		double a;
 		do {
 			cout << "a = ";
+			//There is a bug in getDouble() that acts out from time to time if you type something improper.  I haven't fixed it yet.
 			a = getDouble();
 			if (a == 0)
 			{
