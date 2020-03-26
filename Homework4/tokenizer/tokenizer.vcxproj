@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{34D8BF2F-8C93-484F-A075-072849E970D6}</ProjectGuid>
-    <RootNamespace>Homework4</RootNamespace>
+    <ProjectGuid>{D9765CCA-E2B8-47F7-AEDE-9472AC9362E1}</ProjectGuid>
+    <RootNamespace>tokenizer</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
