@@ -25,14 +25,7 @@ using std::min_element;
 using std::istringstream;
 
 
-inline void keepWindowOpen() {//I have to say that I can't see any bugs in the inline function.
-	string tmp;
-	cin.clear();
-	cout << "Press ENTER to exit the program." << endl;
-	getline(cin, tmp);
-}
-
-double getDouble() //This gets a double from the user and somewhat error-checks it, forcing the user to enter an actual number...hopefully.
+double getDouble() //This gets a double from the user and somewhat error-checks it, forcing the user to enter an actual number...most of the time.
 {
 	string inputDouble;
 	double outputDouble;
@@ -54,31 +47,6 @@ double getDouble() //This gets a double from the user and somewhat error-checks 
 	cout << "Thank you!  You entered " << outputDouble << endl;
 	return outputDouble;
 
-}
-
-
-//Below lie definitions for my own functions used in this homework and even other future homework.
-inline  int getUserInt() {//This prompts the user for a positive integer and error-checks it.
-	string InputInteger;
-	int boxLayers;
-	cout << "Please enter a positive integer:  ";
-	getline(cin, InputInteger);
-	istringstream instream(InputInteger);
-	instream >> boxLayers; // Read number from line
-
-	while (!instream || boxLayers < 1) // Error check
-	{
-		cout << "Please enter a positive integer only:  ";
-		instream.clear();
-		instream.ignore();
-		getline(cin, InputInteger);
-		istringstream instream(InputInteger);
-		instream >> boxLayers; // Read number from line
-	}
-	instream.clear();
-	instream.ignore();
-	cout << "Thank you!" << endl;
-	return boxLayers;
 }
 
 //This prompts the user to choose between exiting the program or continuing.

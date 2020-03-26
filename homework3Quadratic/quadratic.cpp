@@ -12,9 +12,9 @@ tuple<bool, double, double> quadratic(const double& a, const double& b, const do
 	//In this case the roots are complex and they are conjugates. 
 	//So we only need to communicate the real part and the positive version of the imaginary part to have all the information we need.
 		if (discriminant < 0) {
-			return {false, T, sqrt(abs(discriminant)) / (2 * a), };  //I will let 0 indicate that the roots are complex.
+			return {false, T, sqrt(abs(discriminant)) / (2 * a), };  //I will let "false" indicate that the roots are complex.
 	    }
-		else {//I will let 1 indicate the roots are real.
+		else {//I will let "true" indicate the roots are real.
 			return { true, T + sqrt(discriminant) / (2 * a), T - sqrt(discriminant) / (2 * a) };
 		}
 }
