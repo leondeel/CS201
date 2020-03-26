@@ -6,10 +6,12 @@ using std::get;
 
 
 tuple<bool, double, double> quadratic(const double& a, const double& b, const double& c) {
+	//The bool output returns "false" if the roots are complex.  The other two outputs are double-types and they return the real roots, or 
+	//they return information about the complex roots.
 	double discriminant = b*b - 4 * a * c;
 	double T = -b / (2 * a);
-//The function will return "false" if the roots are complex.  
-//In this case the roots are complex and they are conjugates because all the coeffcients of the polynomial are real.
+
+//If the roots are complex then they are conjugates because all the coeffcients of the polynomial are real.
 //so we only need to communicate the real part and the positive version of the imaginary part to have all the information we need to convey the complex root.
 		if (discriminant < 0) {
 			return {false, T, sqrt(abs(discriminant)) / (2 * a), };
@@ -27,8 +29,10 @@ void main() {
 			"  Now, please define a,b,c.  Note that 'a' cannot be zero, or else the polynomial is not second-degree." 
 			<< endl;
 		double a;
-		do {
+		do {//This do-while loops makes sure that 'a' doesn't equal zero.
 			cout << "a = ";
+			//This getDouble function is just like my getInt function, with minor changes.  It wrote it in my header file.
+			//It gets a double from the user.
 			//There is a bug in getDouble() that acts out from time to time if you type something improper.  I haven't fixed it yet.
 			a = getDouble();
 			if (a == 0)
@@ -36,8 +40,6 @@ void main() {
 				cout << "Note that 'a' cannot be zero, or else the polynomial is not second-degree.  Please define a,b,c." << endl;
 			}
 		} while ( a == 0 );
-		//This getDouble function is just like my getInt function, with minor changes.  It wrote it in my header file.
-		//It gets a double from the user.
 		cout << "b = ";
 		double b = getDouble();
 		cout << "c = ";
@@ -53,6 +55,8 @@ void main() {
 				<< get<2>(roots) << "  and  "<< get<1>(roots) << " - i* " << get<2>(roots) << endl<<endl;
 		}
 //Yes. We can check to see if the root is true.  I can just uncomment the code below to do that.
+//sometimes the computer will correctly approximate the roots, but if the approximate roots don't make the polynomial exactly equal zero then
+		// then the code below will say that the roots are incorrect, even if they are approximately correct.
 #if 0
 		if (get<0>(roots)) {
 			cout << "(a * (root1 ^ 2 + b * root1 + c) = " << a * get<1>(roots) * get<1>(roots) + b * get<1>(roots) + c << endl;
