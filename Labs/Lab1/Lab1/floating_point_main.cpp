@@ -58,8 +58,9 @@ int main() {
 
 #endif
 
-	// For the additional assignment in this lab, I will 
+	// For the additional assignment in this lab, I will show that sqrt(73)^2 does not return 73 like it ideally should.
 
+	cout << endl;
 
 #if 1
 
@@ -70,14 +71,7 @@ int main() {
 		cout << "WRONG!" << endl;
 	}
 
-
-
-
 #endif
-
-
-
-
 
 	return 0;
 
