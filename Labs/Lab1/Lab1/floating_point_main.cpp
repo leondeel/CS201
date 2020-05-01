@@ -7,6 +7,10 @@
  * Useful trigonometric functions.
  */
 
+#include <stdexcept>
+#include <tuple>
+using std::tuple;
+
 
 #include "floating_point.hpp"	
 #include <iostream>
@@ -48,11 +52,28 @@ int main() {
 	std::vector<double> x = degreesToRadians(360);
 	
 	cout << "degree" << " , " << "cos" << " , " << "sin" << endl;
-	for (size_t i = 0; i < 360; i++) {
+	for (size_t i = 0; i < 361; i++) {
 		cout << i << " , " << cos(x[i]) << " , " << sin(x[i]) << endl;
 	}
 
 #endif
 
+	// For the additional assignment in this lab, I will 
+
+
+#if 1
+
+	if( sqrt(73)^2 == 73)
+
+
+
+
+#endif
+
+
+
+
+
 	return 0;
+
 }
