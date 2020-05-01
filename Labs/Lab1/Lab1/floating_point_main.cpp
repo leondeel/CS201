@@ -7,20 +7,12 @@
  * Useful trigonometric functions.
  */
 
-#include <stdexcept>
-#include <tuple>
-using std::tuple;
-
-
 #include "floating_point.hpp"	
 #include <iostream>
-#include <vector>
-// using sin, cos
-#include <cmath>
+
 using std::cout;
 using std::endl;
-
-
+using std::vector;
 
 
 
@@ -29,14 +21,13 @@ int main() {
 	// compile.  Make it compile by using std::size_t
 	// You can comment this for loop out after that.
 #if 0
-	std::vector<int> v { 1, 2, 3, 4, 5 };
+	vector<int> v { 1, 2, 3, 4, 5 };
 	for (std::size_t i = 2; i < v.size(); ++i) {
 		++v[i];
-		std::cout << v[i] << std::endl;
+		cout << v[i] << endl;
 	}	
-	std::cout << std::endl << std::endl;
+	cout << endl << endl;
 
-	cout << x[2] << " , " << cos(x[2]) << " , " << sin(x[2]) << endl;
 #endif
 
 	// *****************************************************************
@@ -49,7 +40,7 @@ int main() {
 
 	// *****************************************************************
 #if 1
-	std::vector<double> x = degreesToRadians(360);
+	vector<double> x = degreesToRadians(360);
 	
 	cout << "degree" << " , " << "cos" << " , " << "sin" << endl;
 	for (size_t i = 0; i < 361; i++) {
@@ -60,7 +51,7 @@ int main() {
 
 	// For the additional assignment in this lab, I will show that sqrt(73)^2 does not return 73 like it ideally should.
 
-	cout << endl;
+	cout<<endl;
 
 #if 1
 
@@ -72,6 +63,10 @@ int main() {
 	}
 
 #endif
+
+
+
+
 
 	return 0;
 
