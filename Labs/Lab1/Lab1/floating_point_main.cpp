@@ -19,6 +19,7 @@ using std::endl;
 
 
 
+
 int main() {
 	// TODO Turn on "error on warnings" so this doesn't*****************
 	// compile.  Make it compile by using std::size_t
@@ -30,6 +31,8 @@ int main() {
 		std::cout << v[i] << std::endl;
 	}	
 	std::cout << std::endl << std::endl;
+
+	cout << x[2] << " , " << cos(x[2]) << " , " << sin(x[2]) << endl;
 #endif
 
 	// *****************************************************************
@@ -42,9 +45,9 @@ int main() {
 
 	// *****************************************************************
 #if 1
-	auto x = degreesToRadians(360);
+	std::vector<double> x = degreesToRadians(360);
 	
-	for (size_t i = 0; i < x.size(); i++) {
+	for (size_t i = 0; i < 360; i++) {
 		cout << i << " , " << cos(x[i]) << " , " << sin(x[i]) << endl;
 	}
 

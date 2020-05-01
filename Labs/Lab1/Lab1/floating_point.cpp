@@ -15,12 +15,12 @@
 
 std::vector<double> degreesToRadians(int degrees) {
 
-	std::vector<double> radians;
+	std::vector<double> radians(degrees)
 
 	// for each degree, fill the vector with its radian
 	for (int degree = 0; degree <= degrees; ++degree) {
 		// TODO: calculate a radian and add it to the vector****************
-
+		radian
 
 		// *****************************************************************
 	}
