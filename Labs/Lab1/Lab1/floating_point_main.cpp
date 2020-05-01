@@ -63,11 +63,11 @@ int main() {
 
 #if 1
 
-	if (sqrt(73) ^ 2 == 73) {
-		cout << "WRONG!" << endl;
+	if ( sqrt(73)* sqrt(73) == 73) {
+		cout << "Right" << endl;
 	}
 	else{
-		cout << "Right" << endl;
+		cout << "WRONG!" << endl;
 	}
 
 
