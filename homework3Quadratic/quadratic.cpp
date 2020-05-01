@@ -9,13 +9,13 @@ using std::tuple;
 using std::get;
 
 
-tuple<bool, double, double> quadratic(const double& a, const double& b, const double& c) {
+tuple<bool, long double, long double> quadratic(const long double& a, const long double& b, const long double& c) {
 	//The bool output returns "false" if the roots are complex.  The other two outputs are double-types and they return the real roots, or 
 	//they return information about the complex roots.
 
-	double discriminant = b*b - 4 * a * c;//  en.wikipedia.org/wiki/Discriminant
+	long double discriminant = b*b - 4 * a * c;//  en.wikipedia.org/wiki/Discriminant
 
-	double T = -b / (2 * a);//This part is the real part of the root is the root is complex, 
+	long double T = -b / (2 * a);//This part is the real part of the root is the root is complex, 
 	//but if the root is real-only, then this part can be used later to get the real root.
 
 //If the roots are complex then they are conjugates because all the coeffcients of the polynomial are real.
@@ -35,7 +35,7 @@ void main() {
 			"Let ( a*x^2 + b*x + c ) be a second-degree, single-variable polynomial, with variable x, with REAL coeffcients a,b,c."<<endl<<
 			"Now, please define a,b,c.  Note that 'a' cannot be zero, or else the polynomial is not second-degree." 
 			<< endl;
-		double a;
+		long double a;
 		do {//This do-while loops makes sure that 'a' doesn't equal zero.  if 'a' is zero the quadratic formula fails.
 			cout << "a = ";
 			//This getDouble function is just like my getInt function, with minor changes.  It wrote it in my header file.
@@ -49,9 +49,9 @@ void main() {
 			}
 		} while ( a == 0 );
 		cout << "b = ";
-		double b = getDouble();
+		long double b = getDouble();
 		cout << "c = ";
-		double c = getDouble();
+		long double c = getDouble();
 
 		auto roots = quadratic(a, b, c);
 
@@ -70,13 +70,13 @@ void main() {
 			cout << "(a * (root1 ^ 2 + b * root1 + c) = " << a * get<1>(roots) * get<1>(roots) + b * get<1>(roots) + c << endl;
 			if (a * get<1>(roots)* get<1>(roots) + b * get<1>(roots) + c == 0)
 				cout << "root 1 works." << endl;
-			else cout << "root 1 failed." << endl;
+			else cout << "root 1 failed, technically at least.  But inserting it into the polynomial gives " << a * get<1>(roots) * get<1>(roots) + b * get<1>(roots) + c << endl;
 			
 			cout <<endl << "(a * (root2 ^ 2 + b * root2 + c) = " << a * get<2>(roots) * get<2>(roots) + b * get<2>(roots) + c << endl;
 
 			if (a * get<2>(roots)* get<2>(roots) + b * get<2>(roots) + c == 0)
 				cout << "root 2 works." << endl;
-			else cout << "root 2 failed." << endl;
+			else cout << "root 2 failed, technically at least.  But inserting it into the polynomial gives " << a * get<2>(roots) * get<2>(roots) + b * get<2>(roots) + c << endl;
 		}
 		else {
 			cout << 

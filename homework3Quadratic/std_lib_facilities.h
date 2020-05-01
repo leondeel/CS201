@@ -29,11 +29,11 @@ using std::istringstream;
  
 double getDouble() //This gets a double from the user and somewhat error-checks it, forcing the user to enter an actual number...most of the time.
 //This istringstream has bugs.  Calling instream.clear() doesn't do enough to reset everything back from scratch.  
-//I looked over forums, but to no avail.  I blame the makers of istringstream.
+//I looked over forums, but to no avail.  I blame the makers of istringstream.  Or am I missing something?
 //I could make my own version of this code COMPLETELY from scratch without even using istringstream, but that would be a whole extra assigment in itself.
 {
 	string inputDouble;
-	double outputDouble;
+	long double outputDouble;
 	getline(cin, inputDouble);
 	istringstream instream(inputDouble);
 	instream >> outputDouble; // Read number from line
