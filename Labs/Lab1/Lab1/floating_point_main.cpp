@@ -47,6 +47,7 @@ int main() {
 #if 1
 	std::vector<double> x = degreesToRadians(360);
 	
+	cout << "degree" << " , " << "cos" << " , " << "sin" << endl;
 	for (size_t i = 0; i < 360; i++) {
 		cout << i << " , " << cos(x[i]) << " , " << sin(x[i]) << endl;
 	}

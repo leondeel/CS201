@@ -15,7 +15,7 @@
 
 std::vector<double> degreesToRadians(int degrees) {
 
-	std::vector<double> radians(degrees);
+	std::vector<double> radians(degrees+1);
 
 	// for each degree, fill the vector with its radian
 	for (int degree = 0; degree <= degrees; ++degree) {
