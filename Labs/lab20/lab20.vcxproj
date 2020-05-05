@@ -138,6 +138,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\Lab1\Lab1\floating_point.cpp" />
+    <ClCompile Include="..\Lab1\Lab1\floating_point_main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Lab1\Lab1\floating_point.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
