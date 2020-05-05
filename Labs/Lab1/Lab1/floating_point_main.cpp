@@ -1,7 +1,7 @@
 /**
- * @file     L19_Floating_Point.cpp
+ * @file     L12_Floating_Point.cpp
  * @author   M. Ariel Hernandez
- * @version  Jan 28, 2019
+ * @version  May 5th, 2020
  * John Quan 
  *
  * Useful trigonometric functions.
@@ -20,6 +20,7 @@ int main() {
 	// TODO Turn on "error on warnings" so this doesn't*****************
 	// compile.  Make it compile by using std::size_t
 	// You can comment this for loop out after that.
+
 #if 0
 	vector<int> v { 1, 2, 3, 4, 5 };
 	for (std::size_t i = 2; i < v.size(); ++i) {
@@ -42,7 +43,7 @@ int main() {
 #if 1
 	vector<double> x = degreesToRadians(360);
 	
-	cout << "degree" << " , " << "cos" << " , " << "sin" << endl;
+	cout << "degree" << " , " << "cos" << endl;
 	for (size_t i = 0; i < 361; i++) {
 		cout << i << " , " << cos(x[i]) << " , " << sin(x[i]) << endl;
 	}
