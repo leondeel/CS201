@@ -15,10 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\Lab1\Lab1\floating_point_main.cpp">
+    <ClCompile Include="..\Lab1\Lab1\floating_point.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\Lab1\Lab1\floating_point.cpp">
+    <ClCompile Include="..\Lab1\Lab1\formatted_output_main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -139,7 +139,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\Lab1\Lab1\floating_point.cpp" />
-    <ClCompile Include="..\Lab1\Lab1\floating_point_main.cpp" />
+    <ClCompile Include="..\Lab1\Lab1\formatted_output_main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Lab1\Lab1\floating_point.hpp" />
