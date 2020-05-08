@@ -1,6 +1,6 @@
 /**
  * @file     floating_point.hpp
- * @author   Student Name
+ * @author   Ariel Hernandez
  * @version  Mar 1, 2019
  * John Quan 
  *
