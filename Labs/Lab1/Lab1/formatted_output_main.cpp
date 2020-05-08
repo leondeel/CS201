@@ -22,7 +22,7 @@ int main() {
 	cout << "degree" << "  " <<"cos(degree)" << std::fixed<<  endl;
 	for (size_t i = 0; i < 361; i+=5) {
 		if (cos(x[i]) >= 0) {
-			cout << std::setw(3) << i << "   " << std::setw(7) << cos(x[i]) << endl;
+			cout << std::setw(3) << i << "    " << std::setw(8) << cos(x[i]) << endl;
 		}
 		else {
 			cout << std::setw(3) << i << "   " << std::setw(8) << cos(x[i]) << endl;
