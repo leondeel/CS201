@@ -32,7 +32,7 @@ int main() {
 
 #endif
 
-//Addictional part of lab 20
+//Additional part of lab 20
 #if 1
 	vector<double> x = degreesToRadians(360);
 
