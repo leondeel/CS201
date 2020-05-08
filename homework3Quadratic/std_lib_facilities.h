@@ -37,6 +37,7 @@ double getDouble() //This gets a double from the user and somewhat error-checks 
 	getline(cin, inputDouble);
 	istringstream instream(inputDouble);
 	instream >> outputDouble; // Read number from line
+	cout << outputDouble << endl;
 
 	while (!instream ) // Error check
 	{//Inside the loop, istringstream acts weird sometimes.  It will return a double if you just type "enter".
@@ -46,6 +47,7 @@ double getDouble() //This gets a double from the user and somewhat error-checks 
 		getline(cin, inputDouble);
 		istringstream instream(inputDouble);
 		instream >> outputDouble; // Read number from line again to repeat process.
+		cout << outputDouble << endl;
 	}
 	instream.clear();
 	cin.clear();

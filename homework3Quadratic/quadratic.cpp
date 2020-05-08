@@ -29,8 +29,15 @@ tuple<bool, long double, long double> quadratic(const long double& a, const long
 }
 
 
+
 void main() {
+
+
 	do {//This do-while loop will terminate when the user indicates he wants to stop running the program.
+
+		getDouble();
+
+#if 0
 		cout << 
 			"Let ( a*x^2 + b*x + c ) be a second-degree, single-variable polynomial, with variable x, with REAL coeffcients a,b,c."<<endl<<
 			"Now, please define a,b,c.  Note that 'a' cannot be zero, or else the polynomial is not second-degree." 
@@ -62,6 +69,8 @@ void main() {
 			cout << "The roots of this polynomial are two complex conjugates:  " << get<1>(roots) << " + i* " 
 				<< get<2>(roots) << "  and  "<< get<1>(roots) << " - i* " << get<2>(roots) << endl<<endl;
 		}
+
+#endif
 //Yes. We can check to see if the root is true.  I can just uncomment the code below to do that.
 //sometimes the computer will correctly approximate the roots, but if the approximate roots don't make the polynomial exactly equal zero,
 		// then the commented code below will say that the roots are incorrect, even if they are approximately correct.
