@@ -15,10 +15,21 @@ using std::string;
 
 void main() 
 {
+#if 0
     string str;
     cout << "Enter a string:" << endl << endl;
     std::getline(std::cin, str);
     auto s = trunc8(str);
     cout << s.str << endl << endl << s.len << endl;
 
+#endif
+#if 1
+    string str;
+    cout << "Enter a string:" << endl << endl;
+    std::getline(std::cin, str);
+
+    auto s = trunc8(str);
+    cout << s.str << endl << endl << s.len << endl;
+
+#endif
 }
