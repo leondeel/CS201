@@ -18,8 +18,8 @@ bool doesNameExist(const string &nameToFind, const vector<string> &names);
 void printNames(const vector<string>& names);
 void interesting(vector<string>& names);
 #if 0
-This "interesting" function is for the names.cpp program.  It sorts its input into dictionary-order, 
-or rather into ASCII order or some equivalent like ASCII or Unicode from least to greatest.
+//This "interesting" function is for the names.cpp program.  It sorts its input into dictionary-order, 
+//or rather into ASCII order or some equivalent like ASCII or Unicode from least to greatest.
 #endif
 void money();
 
