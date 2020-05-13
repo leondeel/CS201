@@ -16,23 +16,24 @@ using std::string;
 
 void main() 
 {
+    do {
 #if 0
-    string str;
-    cout << "Enter a string:" << endl << endl;
-    std::getline(std::cin, str);
-    auto s = trunc8(str);
-    cout << s.str << endl << endl << s.len << endl;
+        string str;
+        cout << "Enter a string:" << endl << endl;
+        std::getline(std::cin, str);
+        auto s = trunc8(str);
+        cout << s.str << endl << endl << s.len << endl;
+
 
 #endif
 #if 1
-    string str;
-    cout << "Enter a string:" << endl << endl;
-    std::getline(std::cin, str);
-    int k = 5;
-
-    auto s = StringInfo{ str, k };
-
-    cout << s.str << endl << endl << s.len << endl;
+        string str;
+        cout << "Enter a string:" << endl;
+        std::getline(std::cin, str);
+        size_t k = getUserInt();
+        auto s = trunc(StringInfo{ str, k });
+        cout << s.str << endl << s.len << endl;
 
 #endif
+    } while (!userWantsToExit());
 }
