@@ -28,7 +28,7 @@ void main()
     cout << "Enter a string:" << endl << endl;
     std::getline(std::cin, str);
 
-    auto s = trunc8(str);
+    auto s = trunc(str);
     cout << s.str << endl << endl << s.len << endl;
 
 #endif
