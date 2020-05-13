@@ -4,6 +4,7 @@
  * @version  May 12th, 2020
  */
 
+#include "my_standard_library.h"
 #include "truncstruct.hpp"	
 #include <iostream>
 #include <iomanip>
@@ -27,8 +28,10 @@ void main()
     string str;
     cout << "Enter a string:" << endl << endl;
     std::getline(std::cin, str);
+    int k = 5;
 
-    auto s = trunc(str);
+    auto s = StringInfo{ str, k };
+
     cout << s.str << endl << endl << s.len << endl;
 
 #endif

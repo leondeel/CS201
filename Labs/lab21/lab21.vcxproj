@@ -142,6 +142,7 @@
     <ClCompile Include="truncstruct.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="my_standard_library.h" />
     <ClInclude Include="truncstruct.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

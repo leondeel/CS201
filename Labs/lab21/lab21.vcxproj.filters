@@ -26,5 +26,8 @@
     <ClInclude Include="truncstruct.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="my_standard_library.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
