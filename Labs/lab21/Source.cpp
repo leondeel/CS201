@@ -21,16 +21,15 @@ void main()
         auto s = trunc8(str);
         cout << s.str << endl << endl << s.len << endl;
 
-
 #endif
 #if 1
         string str;
         cout << "Enter a string:" << endl;
         std::getline(std::cin, str);
-        size_t k = getUserInt();
+        size_t k = getUserInt();//this asks the user for an int
         auto s = trunc(StringInfo{ str, k });
-        cout << s.str << endl << s.len << endl;
+        cout <<"RESULT:    "<< s.str << endl <<"LENGTH OF STRING:     "<< s.len << endl;
 
 #endif
-    } while (!userWantsToExit());
+    } while (!userWantsToExit());//This function returns a bool indicating if the user wants to restart or not.
 }
