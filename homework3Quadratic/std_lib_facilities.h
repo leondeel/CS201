@@ -27,7 +27,7 @@ using std::istringstream;
 
 
  
-double getDouble() 
+long double getDouble() 
 {
 	long double outputDouble;
 	while (true) // Error check
