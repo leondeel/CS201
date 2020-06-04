@@ -28,7 +28,7 @@ using std::istringstream;
 
 //Below lie definitions for my own functions used in this homework and even other future homework.
 
-inline int getUserInt() {//This prompts the user for a positive integer and error-checks it.
+inline int getPosInt() {//This prompts the user for a positive integer and error-checks it.
 
 	int boxLayers;
 	while (true) // Error check
