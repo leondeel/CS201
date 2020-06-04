@@ -29,25 +29,17 @@ using std::istringstream;
 //Below lie definitions for my own functions used in this homework and even other future homework.
 
 inline int getUserInt() {//This prompts the user for a positive integer and error-checks it.
-	string InputInteger;
-	int boxLayers;
-	cout << "Type a positive integer:  ";
-	getline(cin, InputInteger);
-	istringstream instream(InputInteger);
-	instream >> boxLayers; // Read number from line
 
-	while (!instream || boxLayers < 1) // Error check
+	int boxLayers;
+	while (true) // Error check
 	{
 		cout << "Please type a positive integer only:  ";
-		instream.clear();
-		instream.ignore();
+		string InputInteger;
 		getline(cin, InputInteger);
 		istringstream instream(InputInteger);
 		instream >> boxLayers; // Read number from line
+		if (instream || boxLayers > 0) break;
 	}
-	instream.clear();
-	instream.ignore();
-	cout << "Thank you!" << endl;
 	return boxLayers;
 }
 
@@ -64,30 +56,19 @@ inline bool userWantsToExit() {
 }
 
 
-double getDouble() //This gets a double from the user and somewhat error-checks it, forcing the user to enter an actual number...most of the time.
-//This istringstream has bugs.  Calling instream.clear() doesn't do enough to reset everything back from scratch.  
-//I looked over forums, but to no avail.  I blame the makers of istringstream.  Or am I missing something?
-//I could make my own version of this code COMPLETELY from scratch without even using istringstream, but that would be a whole extra assigment in itself.
+long double getDouble() 
 {
-	string inputDouble;
 	long double outputDouble;
-	getline(cin, inputDouble);
-	istringstream instream(inputDouble);
-	instream >> outputDouble; // Read number from line
-	cout << outputDouble << endl;
-
-	while (!instream) // Error check
-	{//Inside the loop, istringstream acts weird sometimes.  It will return a double if you just type "enter".
-		cout << "Make sure you enter a NUMBER:  ";
-		cin.clear();
-		instream.clear();
+	while (true) // Error check
+	{
+		cout << "Please correctly enter a double." << endl;
+		string inputDouble;
 		getline(cin, inputDouble);
 		istringstream instream(inputDouble);
-		instream >> outputDouble; // Read number from line again to repeat process.
-		cout << outputDouble << endl;
+		instream >> outputDouble; // Read number from line
+		if (instream) break;
 	}
-	instream.clear();
-	cin.clear();
+
 	cout << "Thank you!  You entered " << outputDouble << endl;
 	return outputDouble;
 
