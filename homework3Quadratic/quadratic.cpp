@@ -37,7 +37,9 @@ void main() {
 
 		getDouble();
 
-#if 1
+
+
+#if 0
 		cout << 
 			"Let ( a*x^2 + b*x + c ) be a second-degree, single-variable polynomial, with variable x, with REAL coeffcients a,b,c."<<endl<<
 			"Now, please define a,b,c.  Note that 'a' cannot be zero, or else the polynomial is not second-degree." 
