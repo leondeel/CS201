@@ -1,6 +1,5 @@
 #pragma once
 
-
 #ifndef _MY_STANDARD_LIBRARY_
 #define _MY_STANDARD_LIBRARY_
 
@@ -25,7 +24,6 @@ using std::vector;
 using std::min_element;
 using std::istringstream;
 
-
 //Below lie definitions for my own functions used in this homework and even other future homework.
 
 inline int getPosInt() {//This prompts the user for a positive integer and error-checks it.
@@ -44,15 +42,15 @@ inline int getPosInt() {//This prompts the user for a positive integer and error
 }
 
 //This prompts the user to choose between exiting the program or continuing.
-inline bool userWantsToExit() {
+inline bool userWillContinue() {
 
 	string userExit;
 	cout << "\n\nDo you wish to repeat that?  If so, enter \"yes\". \nOtherwise, if you wish to exit, enter anything else that doesn't start with the letter \"y\"....   " << endl;
 	getline(cin, userExit);
 	if (userExit[0] == 'Y' || userExit[0] == 'y') {
-		return false;
+		return true;
 	}
-	return true;
+	return false;
 }
 
 

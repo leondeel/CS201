@@ -14,5 +14,7 @@ unsigned int stringToTokensWS(const string& input, const vector<string>& tokens)
 
 
 void main() {
-    
+	do {
+		getDouble;
+	} while (userWillContinue());
 }
