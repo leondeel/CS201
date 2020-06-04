@@ -56,7 +56,7 @@ inline bool userWantsToExit() {
 }
 
 
-long double getDouble() 
+inline long double getDouble() 
 {
 	long double outputDouble;
 	while (true) // Error check
