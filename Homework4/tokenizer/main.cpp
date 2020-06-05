@@ -6,9 +6,19 @@ bool readLine(string& str)
 {
 	getline(cin, str);
 	if (str.size() == 0) return false;
-	return true;
+	for (auto n: str)
+	{
+		if (
+		     !(n == ' '
+			|| n == '/t'
+			|| n == '/n'
+			|| n == '/v'
+			|| n == '/f'
+			|| n == '/r')
+			) return true;
+	}
+	return false;
 }
-
 
 unsigned int stringToTokensWS(const string& input, const vector<string>& tokens) 
 {
