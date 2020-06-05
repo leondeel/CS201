@@ -21,15 +21,21 @@ bool readLine(string& str)
 }
 
 #if 1
-unsigned int stringToTokensWS(const string& input, const vector<string>& tokens) 
+unsigned int stringToTokensWS(const string& input, vector<string>& tokens) 
 {
 	istringstream myStream(input);
-	unsigned int i;
 
-	myStream >> tokens[i]
-
+	for ( size_t i = 0; myStream; i++ )
+	{
+		if (tokens.size() <= i) tokens.resize(i + 1);
+		myStream >> tokens[i];
+		cout << tokens[i];
+		i++;
+		
+	}
 	
-
+	
+	return 2;
 }
 #endif
 
@@ -42,6 +48,10 @@ void analyzeTokens(const vector<string>& tokens);
 
 void main() {
 	do {
+		string str;
+		getline(cin, str);
+		vector<string> tokens(3);
+		stringToTokensWS(str, tokens);
 
 	} while (userContinues());
 }
