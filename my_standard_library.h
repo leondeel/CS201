@@ -29,23 +29,25 @@ using std::istringstream;
 inline int getPosInt() {//This prompts the user for a positive integer and error-checks it.
 
 	int boxLayers;
+	string InputInteger;
+	
 	while (true) // Error check
 	{
 		cout << "Please type a positive integer only:  ";
-		string InputInteger;
 		getline(cin, InputInteger);
 		istringstream instream(InputInteger);
 		instream >> boxLayers; // Read number from line
-		if (instream || boxLayers > 0) break;
+		if (instream && boxLayers > 0) break;
 	}
 	return boxLayers;
 }
 
 //This prompts the user to choose between exiting the program or continuing.
-inline bool userWillContinue() {
+inline bool userContinues() {
 
 	string userExit;
-	cout << "\n\nDo you wish to repeat that?  If so, enter \"yes\". \nOtherwise, if you wish to exit, enter anything else that doesn't start with the letter \"y\"....   " << endl;
+	cout << "\n\nDo you wish to repeat that?  If so, enter \"yes\". " << endl
+		<< "Otherwise, if you wish to exit, press enter, or enter anything else that doesn't start with the letter \"y\"....   " << endl;
 	getline(cin, userExit);
 	if (userExit[0] == 'Y' || userExit[0] == 'y') {
 		return true;
@@ -57,10 +59,10 @@ inline bool userWillContinue() {
 inline long double getDouble() 
 {
 	long double outputDouble;
+	string inputDouble;
 	while (true) // Error check
 	{
 		cout << "Please correctly enter a double." << endl;
-		string inputDouble;
 		getline(cin, inputDouble);
 		istringstream instream(inputDouble);
 		instream >> outputDouble; // Read number from line
