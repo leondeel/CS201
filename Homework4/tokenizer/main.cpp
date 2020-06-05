@@ -20,11 +20,15 @@ bool readLine(string& str)
 	return false;
 }
 
-#if 0
+#if 1
 unsigned int stringToTokensWS(const string& input, const vector<string>& tokens) 
 {
 	istringstream myStream(input);
+	unsigned int i;
 
+	myStream >> tokens[i]
+
+	
 
 }
 #endif
@@ -38,26 +42,7 @@ void analyzeTokens(const vector<string>& tokens);
 
 void main() {
 	do {
-		string text("   \n   \t  /r  word x 13 9");
-		istringstream instream(text);
-		string w;
-		string num;
-		string c;
-		string d;
-		bool sign;
-		instream >> w;
-		sign = !(!(instream));
-		cout << sign << endl;
-		instream >> c;
-		sign = !(!(instream));
-		cout << sign << endl; 
-		instream>> num;
-		sign = !(!(instream));
-		cout << sign << endl;
-		instream >> d;
-		sign = !(!(instream));
-		cout << sign << endl;
-		cout << w << c << num << d<< endl;
+
 	} while (userContinues());
 }
 
