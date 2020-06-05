@@ -10,6 +10,11 @@ bool readLine(string& str)
 }
 
 
+unsigned int stringToTokensWS(const string& input, const vector<string>& tokens) 
+{
+
+}
+
 #if 0
 bool readLine(const string& str);
 unsigned int stringToTokensWS(const string& input, const vector<string>& tokens);
