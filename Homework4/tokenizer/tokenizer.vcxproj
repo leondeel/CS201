@@ -139,9 +139,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="readLine.cpp" />
-    <ClCompile Include="analyzeTokens.cpp" />
-    <ClCompile Include="stringToTokenWS.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\my_standard_library.h" />

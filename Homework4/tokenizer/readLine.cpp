@@ -7,6 +7,6 @@
 bool readLine(string& str) 
 {
 	getline(cin, str);
-
+	cout << "begin" << str << "end"<<endl;
 }
 
