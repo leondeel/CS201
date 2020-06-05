@@ -22,8 +22,11 @@ bool readLine(string& str)
 
 unsigned int stringToTokensWS(const string& input, const vector<string>& tokens) 
 {
+	istringstream myStream(input);
+
 
 }
+
 
 #if 0
 bool readLine(const string& str);
