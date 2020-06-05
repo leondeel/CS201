@@ -5,7 +5,8 @@
 bool readLine(string& str)
 {
 	getline(cin, str);
-	cout << "begin" << str << "end" << endl;
+	if (str.size() == 0) return false;
+	return true;
 }
 
 
@@ -18,16 +19,12 @@ void analyzeTokens(const vector<string>& tokens);
 
 void main() {
 	do {
-		
+		string str;
+		cout << readLine(str) << endl;
 
 
 	} while (userContinues());
 }
 
 
-bool readLine(string& str)
-{
-	getline(cin, str);
-	cout << "begin" << str << "end" << endl;
-}
 
