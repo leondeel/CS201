@@ -2,6 +2,7 @@
 #include "C:\Users\M. Ariel Hernandez\source\repos\cs201\my_standard_library.h";
 
 
+
 bool readLine(string& str)
 {
 	getline(cin, str);
@@ -20,24 +21,22 @@ bool readLine(string& str)
 	return false;
 }
 
-#if 1
 unsigned int stringToTokensWS(const string& input, vector<string>& tokens) 
 {
 	istringstream myStream(input);
+	unsigned int i = 0;
 
-	for ( size_t i = 0; myStream; i++ )
+	while (myStream)
 	{
-		if (tokens.size() <= i) tokens.resize(i + 1);
+		if (tokens.size() == i) tokens.resize(i+1);
 		myStream >> tokens[i];
 		cout << tokens[i];
 		i++;
-		
 	}
-	
-	
-	return 2;
+	tokens.resize(--i);
+	return i;;
 }
-#endif
+
 
 #if 0
 bool readLine(const string& str);
@@ -48,10 +47,11 @@ void analyzeTokens(const vector<string>& tokens);
 
 void main() {
 	do {
+
 		string str;
 		getline(cin, str);
-		vector<string> tokens(3);
-		stringToTokensWS(str, tokens);
+		vector<string> tokens;
+
 
 	} while (userContinues());
 }
