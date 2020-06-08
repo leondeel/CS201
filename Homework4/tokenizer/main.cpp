@@ -45,12 +45,12 @@ void analyzeTokens(const vector<string>& tokens)
 
 	for( auto v : tokens)
 	{
-#if 0
-		else if (v[0] == '\"' && v[v.size() - 1] == '\"')
+
+		if (v[0] == '\"' && v[v.size() - 1] == '\"')
 		{
 		cout << "[string literal]" << '\t' << v << endl;
 		}
-#endif
+		else if ()
 	}
 }
 
@@ -67,15 +67,11 @@ void main() {
 		vector<string> tokens(1);
 		string str;
 		unsigned int i = 0;
-		if (!readLine(str))
-		{
-			tokens[i] = '\n';
-			i++;
-		}
-		else
-		{
-			i= stringToTokensWS(str, tokens) -1;
-		}
+
+		if (!readLine(str))  tokens[i] = '\n';
+
+		else i= stringToTokensWS(str, tokens) -1;
+	
 	} while (userContinues());
 }
 
