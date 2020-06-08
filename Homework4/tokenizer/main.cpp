@@ -2,7 +2,6 @@
 #include "C:\Users\M. Ariel Hernandez\source\repos\cs201\my_standard_library.h";
 
 
-
 bool readLine(string& str)
 {
 	getline(cin, str);
@@ -37,6 +36,11 @@ unsigned int stringToTokensWS(const string& input, vector<string>& tokens)
 	return i;;
 }
 
+void analyzeTokens(const vector<string>& tokens)
+{
+
+}
+
 
 #if 0
 bool readLine(const string& str);
@@ -51,7 +55,6 @@ void main() {
 		string str;
 		getline(cin, str);
 		vector<string> tokens;
-
 
 	} while (userContinues());
 }
