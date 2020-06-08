@@ -78,10 +78,6 @@ void main() {
 			i= stringToTokensWS(str, tokens) -1;
 		}
 
-
-		stringToTokensWS(str, tokens);
-		analyzeTokens(tokens);
-
 	} while (userContinues());
 }
 
