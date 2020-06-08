@@ -29,16 +29,27 @@ unsigned int stringToTokensWS(const string& input, vector<string>& tokens)
 	{
 		if (tokens.size() == i) tokens.resize(i+1);
 		myStream >> tokens[i];
-		cout << tokens[i];
 		i++;
 	}
 	tokens.resize(--i);
 	return i;;
 }
 
-void analyzeTokens(const vector<string>& tokens)
+bool analyzeTokens(const vector<string>& tokens)
 {
+	istringstream myStream();
 
+	int i;
+	string identifier;
+	bool whitespace;
+	bool unknown;
+
+	for( auto v : tokens)
+	{
+		if (v[0] == '\"' && v[v.size()-1] == '\"')
+			return true;
+	}
+	return false;
 }
 
 
@@ -55,6 +66,8 @@ void main() {
 		string str;
 		getline(cin, str);
 		vector<string> tokens;
+		stringToTokensWS(str, tokens);
+		cout << endl << analyzeTokens(tokens) << endl;
 
 	} while (userContinues());
 }
