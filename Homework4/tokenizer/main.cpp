@@ -23,10 +23,9 @@ unsigned int stringToTokensWS(const string& input, vector<string>& tokens)
 {
 	istringstream myStream(input);
 	unsigned int i = tokens.size() - 1;
-
 	while (myStream)
 	{
-		if (tokens.size() == i) tokens.resize(i+1);
+		if (tokens.size() == i+1) tokens.resize(i+2);
 		myStream >> tokens[i];
 		i++;
 	}
@@ -77,7 +76,6 @@ void main() {
 		{
 			i= stringToTokensWS(str, tokens) -1;
 		}
-
 	} while (userContinues());
 }
 
