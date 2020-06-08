@@ -31,8 +31,8 @@ unsigned int stringToTokensWS(const string& input, vector<string>& tokens)
 		i++;
 	}
 	tokens[i] = '\n';
-	tokens.resize(i);
-	return i;;
+	tokens.resize(i+1);
+	return i+1;
 }
 
 void analyzeTokens(const vector<string>& tokens)
@@ -65,13 +65,17 @@ void analyzeTokens(const vector<string>& tokens);
 
 void main() {
 	do {
-		vector<string> tokens;
+		vector<string> tokens(1);
 		string str;
-
-		if (readLine(str))
+		unsigned int i = 0;
+		if (!readLine(str))
 		{
-
-			stringToTokensWS(str, tokens);
+			tokens[i] = '\n';
+			i++;
+		}
+		else
+		{
+			i= stringToTokensWS(str, tokens) -1;
 		}
 
 
