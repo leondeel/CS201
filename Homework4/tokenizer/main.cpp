@@ -1,7 +1,6 @@
 
 #include "C:\Users\M. Ariel Hernandez\source\repos\cs201\my_standard_library.h";
 
-
 bool readLine(string& str)
 {
 	getline(cin, str);
@@ -23,7 +22,7 @@ bool readLine(string& str)
 unsigned int stringToTokensWS(const string& input, vector<string>& tokens) 
 {
 	istringstream myStream(input);
-	unsigned int i = 0;
+	unsigned int i = tokens.size() - 1;
 
 	while (myStream)
 	{
@@ -31,11 +30,12 @@ unsigned int stringToTokensWS(const string& input, vector<string>& tokens)
 		myStream >> tokens[i];
 		i++;
 	}
-	tokens.resize(--i);
+	tokens[i] = '\n';
+	tokens.resize(i);
 	return i;;
 }
 
-bool analyzeTokens(const vector<string>& tokens)
+void analyzeTokens(const vector<string>& tokens)
 {
 	istringstream myStream();
 
@@ -46,10 +46,13 @@ bool analyzeTokens(const vector<string>& tokens)
 
 	for( auto v : tokens)
 	{
-		if (v[0] == '\"' && v[v.size()-1] == '\"')
-			return true;
+#if 0
+		else if (v[0] == '\"' && v[v.size() - 1] == '\"')
+		{
+		cout << "[string literal]" << '\t' << v << endl;
+		}
+#endif
 	}
-	return false;
 }
 
 
@@ -62,12 +65,18 @@ void analyzeTokens(const vector<string>& tokens);
 
 void main() {
 	do {
-
-		string str;
-		getline(cin, str);
 		vector<string> tokens;
+		string str;
+
+		if (readLine(str))
+		{
+
+			stringToTokensWS(str, tokens);
+		}
+
+
 		stringToTokensWS(str, tokens);
-		cout << endl << analyzeTokens(tokens) << endl;
+		analyzeTokens(tokens);
 
 	} while (userContinues());
 }
