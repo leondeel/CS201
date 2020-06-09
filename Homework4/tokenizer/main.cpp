@@ -38,22 +38,63 @@ void analyzeTokens(const vector<string>& tokens)
 {
 	istringstream myStream();
 
-	int i;
-	string identifier;
-	bool whitespace;
-	bool unknown;
+	int bitmask;
+	string::iterator lastLetter;
+	string::iterator letter;
+	bool hasInt;
+	bool hasLetter;
 
-	for( auto v : tokens)
+	for( auto word : tokens)
 	{
+		lastLetter = word.end() - 1;
 
-		if (v[0] == '\"' && v[v.size() - 1] == '\"')
+		if (
+			       word[0] == ' '
+				|| word[0] == '/t'
+				|| word[0] == '/n'
+				|| word[0] == '/v'
+				|| word[0] == '/f'
+				|| word[0] == '/r'
+			)  
+			cout << "[whitespace]......." << ' ' << " \" \" " << endl;
+
+		else if (word[0] == '\"' &&  *lastLetter == '\"') 
+			cout << "[string literal]..." << ' ' << word << endl;
+
+		else
 		{
-		cout << "[string literal]" << '\t' << v << endl;
+			hasInt = false;
+			hasLetter = false;
+			letter = word.begin();
+			while(letter<lastLetter)
+			{
+				if (*letter >= '0' && *letter <= '9')
+				{
+					hasInt = true;
+					letter++;
+				}
+				else if ((*letter >= 'a' && *letter <= 'z')
+					|| (*letter >= 'A' && *letter <= 'Z')
+					|| (*letter == '_'))
+				{
+					hasLetter = true;
+					letter++;
+				}
+				else 
+				{
+					cout << "[unknown].........." << ' ' << word << endl;
+					hasInt = false;
+					hasLetter = false;
+					break;
+				}
+			}
+			if (hasInt && !hasLetter)
+				cout << "[integer].........." << ' ' << word << endl;
+			else if (hasLetter )
+				cout << "[identifier]......." << ' ' << word << endl;
 		}
-		else if ()
 	}
 }
-
 
 #if 0
 bool readLine(const string& str);
@@ -63,15 +104,16 @@ void analyzeTokens(const vector<string>& tokens);
 
 
 void main() {
+	vector<string> tokens(1);
+	string str;
+	unsigned int i = 0;
 	do {
-		vector<string> tokens(1);
-		string str;
-		unsigned int i = 0;
-
 		if (!readLine(str))  tokens[i] = '\n';
 
 		else i= stringToTokensWS(str, tokens) -1;
-	
+
 	} while (userContinues());
+	analyzeTokens(tokens);
+
 }
 
