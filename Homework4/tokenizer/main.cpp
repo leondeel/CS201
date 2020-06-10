@@ -77,16 +77,16 @@ void analyzeTokens(const vector<string>& tokens)
 				}
 				else 
 				{
-					cout << "[unknown].........." << ' ' << word << endl;
+					cout << "[unknown].........." << " \"" << word << "\"" << endl;
 					hasInt = false;
 					hasLetter = false;
 					break;
 				}
 			}
 			if (hasInt && !hasLetter)
-				cout << "[integer].........." << ' ' << word << endl;
+				cout << "[integer].........." << " \"" << word << "\"" << endl;
 			else if (hasLetter )
-				cout << "[identifier]......." << ' ' << word << endl;
+				cout << "[identifier]......." << " \"" << word << "\"" << endl;
 		}
 	}
 }
