@@ -33,6 +33,8 @@ unsigned int stringToTokensWS(const string& input, vector<string>& tokens)
 		myStream >> myString;
 		if (myStream) tokens.push_back(myString);
 		else break;
+		if (myString == "End" || myString == "END") return unsigned int(tokens.size());
+
 	}
 
 	tokens.push_back("\n");
