@@ -22,23 +22,25 @@ bool readLine(string& str)
 unsigned int stringToTokensWS(const string& input, vector<string>& tokens) 
 {
 	istringstream myStream(input);
-	unsigned int i = tokens.size() - 1;
-	while (myStream)
+	string myString;
+
+	if (tokens.size() == 1)
 	{
-		if (tokens.size() == i+1) tokens.resize(i+2);
-		myStream >> tokens[i];
-		i++;
+		myStream >> tokens[0];
 	}
-	tokens[i] = '\n';
-	tokens.resize(i+1);
-	return i+1;
+	while (true)
+	{
+		myStream >> myString;
+		if (myStream) tokens.push_back(myString);
+		else break;
+	}
+
+	tokens.push_back("\n");
+	return unsigned int(tokens.size());
 }
 
 void analyzeTokens(const vector<string>& tokens)
 {
-	istringstream myStream();
-
-	int bitmask;
 	string::iterator lastLetter;
 	string::iterator letter;
 	bool hasInt;
@@ -47,26 +49,19 @@ void analyzeTokens(const vector<string>& tokens)
 	for( auto word : tokens)
 	{
 		lastLetter = word.end() - 1;
+		letter = word.begin();
 
-		if (
-			       word[0] == ' '
-				|| word[0] == '/t'
-				|| word[0] == '/n'
-				|| word[0] == '/v'
-				|| word[0] == '/f'
-				|| word[0] == '/r'
-			)  
+		if (*lastLetter == '\n') {
 			cout << "[whitespace]......." << ' ' << " \" \" " << endl;
-
-		else if (word[0] == '\"' &&  *lastLetter == '\"') 
+		}
+		else if (*letter == '\"' && *lastLetter == '\"') {
 			cout << "[string literal]..." << ' ' << word << endl;
-
+		}
 		else
 		{
 			hasInt = false;
 			hasLetter = false;
-			letter = word.begin();
-			while(letter<lastLetter)
+			while(letter<=lastLetter)
 			{
 				if (*letter >= '0' && *letter <= '9')
 				{
@@ -106,13 +101,17 @@ void analyzeTokens(const vector<string>& tokens);
 void main() {
 	vector<string> tokens(1);
 	string str;
-	unsigned int i = 0;
-	do {
-		if (!readLine(str))  tokens[i] = '\n';
 
-		else i= stringToTokensWS(str, tokens) -1;
+	if (!readLine(str))  tokens[0] = "\n";
+	else stringToTokensWS(str, tokens);
+
+	do {
+		if (!readLine(str)) tokens.push_back("\n");
+
+		else stringToTokensWS(str, tokens);
 
 	} while (userContinues());
+
 	analyzeTokens(tokens);
 
 }
