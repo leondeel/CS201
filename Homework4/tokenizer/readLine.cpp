@@ -10,11 +10,11 @@ bool readLine(string& str)
 	{
 		if (
 		     !(n == ' '
-			|| n == '/t'
-			|| n == '/n'
-			|| n == '/v'
-			|| n == '/f'
-			|| n == '/r')
+			|| n == '\t'
+			|| n == '\n'
+			|| n == '\v'
+			|| n == '\f'
+			|| n == '\r')
 			) return true;
 	}
 	return false;
