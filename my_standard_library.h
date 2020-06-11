@@ -29,7 +29,7 @@ inline int getPosInt() {//This prompts the user for a positive integer and error
 
 	int boxLayers;
 	string InputInteger;
-	
+
 	while (true) // Error check
 	{
 		cout << "Please type a positive integer only:  ";
@@ -55,7 +55,7 @@ inline bool userContinues() {
 }
 
 
-inline long double getDouble() 
+inline long double getDouble()
 {
 	long double outputDouble;
 	string inputDouble;

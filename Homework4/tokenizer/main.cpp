@@ -1,6 +1,5 @@
-
 #ifndef _MY_STANDARD_LIBRARY_
-#include "C:\Users\M. Ariel Hernandez\source\repos\cs201\my_standard_library.h";
+#include "C:\Users\M. Ariel Hernandez\source\repos\cs201\my_standard_library.h"
 #endif
 
 bool readLine(string& str);
@@ -19,7 +18,7 @@ int main() {
 		if (!readLine(str))  tokens[0] = "\n";
 		else stringToTokensWS(str, tokens);
 
-		while (*(tokens.end()-1) != "End" && *(tokens.end()-1) != "END" && *(tokens.end()-1) != "end")
+		while (*(tokens.end() - 1) != "End" && *(tokens.end() - 1) != "END" && *(tokens.end() - 1) != "end")
 		{
 			if (!readLine(str)) tokens.push_back("\n");
 			else stringToTokensWS(str, tokens);
@@ -28,6 +27,7 @@ int main() {
 		analyzeTokens(tokens);
 
 	} while (userContinues());
+
 	return 0;
 }
 
