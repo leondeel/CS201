@@ -8,7 +8,7 @@ void analyzeTokens(const vector<string>& tokens);
 
 
 
-void main() {
+int main() {
 	do {
 		vector<string> tokens(1);
 		string str;
@@ -27,5 +27,6 @@ void main() {
 		analyzeTokens(tokens);
 
 	} while (userContinues());
+	return 0;
 }
 
