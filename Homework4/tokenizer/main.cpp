@@ -27,14 +27,17 @@ unsigned int stringToTokensWS(const string& input, vector<string>& tokens)
 	if (tokens.size() == 1)
 	{
 		myStream >> tokens[0];
+		if (tokens[0] == "End" || tokens[0] == "END" || tokens[0] == "end") return unsigned int(tokens.size());
 	}
 	while (true)
 	{
 		myStream >> myString;
 		if (myStream) tokens.push_back(myString);
 		else break;
-		if (myString == "End" || myString == "END") return unsigned int(tokens.size());
-
+		if (myString.size() == 3)
+		{
+			if (myString == "End" || myString == "END" || myString == "end") return unsigned int(tokens.size());
+		}
 	}
 
 	tokens.push_back("\n");
@@ -53,11 +56,19 @@ void analyzeTokens(const vector<string>& tokens)
 		lastLetter = word.end() - 1;
 		letter = word.begin();
 
-		if (*lastLetter == '\n') {
+		if (*lastLetter == '\n') 
+		{
 			cout << "[whitespace]......." << ' ' << " \" \" " << endl;
 		}
-		else if (*letter == '\"' && *lastLetter == '\"') {
-			cout << "[string literal]..." << ' ' << word << endl;
+		else if (*letter == '\"' && *lastLetter == '\"') 
+		{
+			cout << "[string literal]..." << "\"\\";
+			while (letter != lastLetter)
+			{
+				cout << *letter;
+				letter++;
+			}
+			cout << "\\\"\""<<endl;
 		}
 		else
 		{
@@ -99,22 +110,21 @@ unsigned int stringToTokensWS(const string& input, const vector<string>& tokens)
 void analyzeTokens(const vector<string>& tokens);
 #endif
 
-
 void main() {
-	vector<string> tokens(1);
-	string str;
-
-	if (!readLine(str))  tokens[0] = "\n";
-	else stringToTokensWS(str, tokens);
-
 	do {
-		if (!readLine(str)) tokens.push_back("\n");
+		vector<string> tokens(1);
+		string str;
 
+		if (!readLine(str))  tokens[0] = "\n";
 		else stringToTokensWS(str, tokens);
 
+		while (*(tokens.end()-1) != "End" && *(tokens.end()-1) != "END" && *(tokens.end()-1) != "end")
+		{
+			if (!readLine(str)) tokens.push_back("\n");
+			else stringToTokensWS(str, tokens);
+		}
+		cout << endl;
+		analyzeTokens(tokens);
+
 	} while (userContinues());
-
-	analyzeTokens(tokens);
-
 }
-
