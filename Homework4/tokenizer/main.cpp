@@ -13,6 +13,8 @@ void main() {
 		vector<string> tokens(1);
 		string str;
 
+		cout << "Please type in some text.  You may hit enter to insert a newline.  Type and enter \"end \" when done." << endl;
+
 		if (!readLine(str))  tokens[0] = "\n";
 		else stringToTokensWS(str, tokens);
 
