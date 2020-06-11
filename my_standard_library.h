@@ -1,4 +1,3 @@
-#pragma once
 
 #ifndef _MY_STANDARD_LIBRARY_
 #define _MY_STANDARD_LIBRARY_

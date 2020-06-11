@@ -15,11 +15,11 @@ void analyzeTokens(const vector<string>& tokens)
 
 		if (*lastLetter == '\n')
 		{
-			cout << "[whitespace]......." << ' ' << " \" \" " << endl;
+			cout << "[whitespace]......." << " \"\" " << endl;
 		}
 		else if (*letter == '\"' && *lastLetter == '\"')
 		{
-			cout << "[string literal]..." << "\"\\";
+			cout << "[string literal]..." << " \"\\";
 			while (letter != lastLetter)
 			{
 				cout << *letter;
@@ -31,26 +31,48 @@ void analyzeTokens(const vector<string>& tokens)
 		{
 			hasInt = false;
 			hasLetter = false;
-			while (letter <= lastLetter)
+			if (*letter == '-')
 			{
-				if (*letter >= '0' && *letter <= '9')
+				letter++;
+				while (letter <= lastLetter)
 				{
-					hasInt = true;
-					letter++;
+					if (*letter >= '0' && *letter <= '9')
+					{
+						letter++;
+						hasInt = true;
+					}
+					else
+					{
+						cout << "[unknown].........." << " \"" << word << "\"" << endl;
+						hasInt = false;
+						hasLetter = false;
+						break;
+					}
 				}
-				else if ((*letter >= 'a' && *letter <= 'z')
-					|| (*letter >= 'A' && *letter <= 'Z')
-					|| (*letter == '_'))
+			}
+			else
+			{
+				while (letter <= lastLetter)
 				{
-					hasLetter = true;
-					letter++;
-				}
-				else
-				{
-					cout << "[unknown].........." << " \"" << word << "\"" << endl;
-					hasInt = false;
-					hasLetter = false;
-					break;
+					if (*letter >= '0' && *letter <= '9')
+					{
+						hasInt = true;
+						letter++;
+					}
+					else if ((*letter >= 'a' && *letter <= 'z')
+						|| (*letter >= 'A' && *letter <= 'Z')
+						|| (*letter == '_'))
+					{
+						hasLetter = true;
+						letter++;
+					}
+					else
+					{
+						cout << "[unknown].........." << " \"" << word << "\"" << endl;
+						hasInt = false;
+						hasLetter = false;
+						break;
+					}
 				}
 			}
 			if (hasInt && !hasLetter)
