@@ -18,11 +18,14 @@
     <ClInclude Include="..\..\my_standard_library.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="stringtoTokenWS.h">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="analyzeTokens.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="readLine.h">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stringtoTokenWS.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

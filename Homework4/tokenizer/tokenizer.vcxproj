@@ -146,6 +146,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\my_standard_library.h" />
+    <ClInclude Include="analyzeTokens.h" />
     <ClInclude Include="readLine.h" />
     <ClInclude Include="stringtoTokenWS.h" />
   </ItemGroup>
