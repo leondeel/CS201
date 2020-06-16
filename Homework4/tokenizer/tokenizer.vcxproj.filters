@@ -21,6 +21,9 @@
     <ClInclude Include="stringtoTokenWS.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="readLine.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
