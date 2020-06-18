@@ -8,7 +8,14 @@ struct DriverLicense {
 	char gender;
 
 };
-
+#if 0
+bool createRecord(const string& key);
+bool readRecord(const string& key, DriverLicense& record);
+bool updateRecord(const string& key, const DriverLicense& record);
+bool deleteRecord(const string& key);
+bool inputRecord(DriverLicense& record);
+bool printRecord(const string& key);
+#endif
 
 int main() {
 
