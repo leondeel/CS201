@@ -7,6 +7,7 @@
 //That it will be unreadable!
 //You are only interested in debugging you custom includes, so comment out all of
 //the C++ standard stuff
+#if 1
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -18,8 +19,9 @@
 #include <cstdio>
 #include <cstdlib>
 #include <cmath>
+#include <bitset>
 
-
+using std::bitset;
 using std::cout;
 using std::cin;
 using std::endl;
@@ -28,7 +30,7 @@ using std::getline;
 using std::vector;
 using std::min_element;
 using std::istringstream;
-
+#endif
 
 int getPosInt();
 bool userContinues();
