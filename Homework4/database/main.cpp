@@ -17,11 +17,25 @@ bool inputRecord(DriverLicense& record);
 bool printRecord(const string& key);
 #endif
 
+map<string, DriverLicense> theDatabase;
+
+bool createRecord(const string& key) {
+	if (theDatabase.find("key") != theDatabase.end()) return false;
+	theDatabase["key"] = {};
+	return true;
+}
+bool readRecord(const string& key, DriverLicense& record) {
+
+	return true;
+}
 
 
 
 int main() {
+	theDatabase["key"].birthDate = 12;
+	bool a = createRecord("key");
+	cout << theDatabase["key"].birthDate << endl<< a;
 
-	return;
+	return 0;
 }
 

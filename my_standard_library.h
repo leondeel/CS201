@@ -30,6 +30,7 @@ using std::getline;
 using std::vector;
 using std::min_element;
 using std::istringstream;
+using std::map;
 #endif
 
 int getPosInt();
