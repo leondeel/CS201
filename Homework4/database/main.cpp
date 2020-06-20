@@ -25,7 +25,8 @@ bool createRecord(const string& key) {
 	return true;
 }
 bool readRecord(const string& key, DriverLicense& record) {
-
+	if (theDatabase.find("key") == theDatabase.end()) return false;
+	record = theDatabase["key"];
 	return true;
 }
 
