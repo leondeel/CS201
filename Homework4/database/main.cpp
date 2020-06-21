@@ -69,7 +69,12 @@ bool inputRecord(DriverLicense& record) {
 	do {
 		cout << "Enter state: ";
 	} while (!(readLine(userInput)));
-
+	do {
+		cout << "Enter zip code: ";
+	} while ( 
+		!(readLine(userInput)) &&  
+		
+		);
 
 	return true;
 }

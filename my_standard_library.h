@@ -33,7 +33,7 @@ using std::istringstream;
 using std::map;
 #endif
 
-int getPosInt();
+unsigned int getPosInt();
 bool userContinues();
 long double getDouble();
 

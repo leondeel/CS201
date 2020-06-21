@@ -2,9 +2,9 @@
 
 //Below lie definitions for my own functions used in this homework and even other future homework.
 
-int getPosInt() {//This prompts the user for a positive integer and error-checks it.
+unsigned int getPosInt() {//This prompts the user for a positive integer and error-checks it.
 
-	int boxLayers;
+	unsigned int boxLayers;
 	string InputInteger;
 
 	while (true) // Error check
