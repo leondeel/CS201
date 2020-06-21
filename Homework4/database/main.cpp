@@ -55,26 +55,34 @@ bool printRecord(const string& key) {
 bool inputRecord(DriverLicense& record) {
 
 	string userInput;
+	int i;
+
 	cout << endl;
 	do {
 		cout << "Enter full name: ";
 	} while (!(readLine(userInput)));
 	record.fullName = userInput;
+
 	do {
 		cout << "Enter street address: ";
 	} while (!(readLine(userInput)));
+	record.streetAddress = userInput;
+
 	do {
 		cout << "Enter city: ";
 	} while (!(readLine(userInput)));
+	record.city = userInput;
+
 	do {
 		cout << "Enter state: ";
 	} while (!(readLine(userInput)));
+	record.state = userInput;
+
 	do {
-		cout << "Enter zip code: ";
-	} while ( 
-		!(readLine(userInput)) &&  
-		
-		);
+		cout << "Enter the 5 digit zip code. ";
+		i = (int)(getPosInt());
+	} while ( i > 99999 );
+	record.zipCode = i;
 
 	return true;
 }
