@@ -1,15 +1,33 @@
 
 #include "C:\Users\M. Ariel Hernandez\source\repos\cs201\my_standard_library.h"
-#include "C:\Users\M. Ariel Hernandez\source\repos\cs201\Homework4\tokenizer\analyzeTokens.h"
 #include "C:\Users\M. Ariel Hernandez\source\repos\cs201\Homework4\tokenizer\readLine.h"
-#include "C:\Users\M. Ariel Hernandez\source\repos\cs201\Homework4\tokenizer\stringToTokenWS.h"
+
 
 struct DriverLicense {
 	string fullName ="", streetAddress = "", city = "", state = "";
-	unsigned int  licenseNumber = 0;
 };
 map<string, DriverLicense> theDatabase;
 
+string getkey() {
+	string key;
+	bool contin = true;
+	do {
+		cout << "Enter a string with no white spaces:  ";
+		getline(cin, key);
+		for (auto n : key)
+		{
+			if (
+				(n == ' '
+					|| n == '\t'
+					|| n == '\n'
+					|| n == '\v'
+					|| n == '\f'
+					|| n == '\r')
+				) contin = false;
+		}
+	} while (contin);
+	return key;
+}
 bool createRecord(const string& key) {
 	if (theDatabase.count(key) == 1 ) return false;
 	theDatabase[key];
@@ -34,14 +52,11 @@ bool printRecord(const string& key) {
 	if (theDatabase.count(key) == 0) return false;
 	cout << endl 
 		<< theDatabase[key].fullName << endl << theDatabase[key].streetAddress << endl
-		<< theDatabase[key].city << endl << theDatabase[key].state <<endl
-		<< "License Number: " << theDatabase[key].licenseNumber << endl << endl;
+		<< theDatabase[key].city << endl << theDatabase[key].state <<endl<< endl;
 	return true;
 }
 bool inputRecord(DriverLicense& record) {
-
 	string userInput;
-	unsigned int i;
 	cout << endl;
 
 	do {
@@ -64,15 +79,12 @@ bool inputRecord(DriverLicense& record) {
 	} while (!(readLine(userInput)));
 	record.state = userInput;
 
-	cout << "Enter License number. ";
-	i = getPosInt();
-	record.licenseNumber = i;
-
 	cout << endl;
 	return true;
 }
 
 int main() {
+	string key;
 
 	return 0;
 }
