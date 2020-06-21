@@ -42,29 +42,28 @@ bool printRecord(const string& key) {
 	if (theDatabase.count(key) == 0) return false;
 	cout << endl 
 		<< theDatabase[key].fullName << endl << theDatabase[key].streetAddress << endl
-		<< theDatabase[key].city << endl << theDatabase[key].state << endl << theDatabase[key].zipCode 
-		<< endl << endl
-		<< "Date of Birth................. " << theDatabase[key].birthDate << endl 
-		<< "Gender (Male, Female, Other).. " << theDatabase[key].gender << endl
-		<< "Height (feet and inches)...... " << theDatabase[key].height << endl
-		<< "Weight (pounds)............... " << theDatabase[key].weight << endl 
-		<< "Eye Color..................... " << theDatabase[key].eyeColor << endl 
+		<< theDatabase[key].city << endl << theDatabase[key].state << endl << theDatabase[key].zipCode << endl 
+		<< endl
+		<< "BirthDate....... " << theDatabase[key].birthDate << endl 
+		<< "Gender ......... " << theDatabase[key].gender 
+						   	   << "  ...(Using letters M,F,O, to indicate Male, Female, or Other)"<< endl
+		<< "Height ......... " << theDatabase[key].height 
+							   << "  ...(Three digit integer: first digit represents feet; last two represent inches)" << endl
+		<< "Weight ......... " << theDatabase[key].weight 
+							   << "  ...(in pounds)" << endl
+		<< "EyeColor........ " << theDatabase[key].eyeColor << endl 
 		<< endl 
-		<< "License Number................ " << theDatabase[key].licenseNumber << endl 
-		<< "Expiration Date............... " << theDatabase[key].expirationDate << endl
-		<< "Issue Date.................... " << theDatabase[key].issueDate << endl 
+		<< "LicenseNumber... " << theDatabase[key].licenseNumber << endl 
+		<< "ExpirationDate.. " << theDatabase[key].expirationDate << endl
+		<< "IssueDate....... " << theDatabase[key].issueDate << endl 
 		<< endl;
 	return true;
 }
 
 #endif
 
-// Instructions for inputRecord are confusing.  Am I supposed to input a new record into the database, 
-// or am I supposed to extract a record from the databased and input it into a user-defined place?
-// If I am supposed to input a new record into the database, then what is its key supposed to be, 
-// and why is the function parameter not a const like in the other functions?  Doesn't the function updateRecord do this anyway?
-// If I am supposed to extract a record from the database into the function parameter, why isn't a "key" given as a parameter?
-// Doesn't readRecord do this anyway?  What's going on here?  What is this function for?
+// Instructions for inputRecord are missing, and it is not at all obvious what I'm supposed to do. 
+// So I'm not going to include this function in the homework.
 #if 0
 bool inputRecord(DriverLicense& record);
 #endif
