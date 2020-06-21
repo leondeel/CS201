@@ -5,9 +5,8 @@
 #include "C:\Users\M. Ariel Hernandez\source\repos\cs201\Homework4\tokenizer\stringToTokenWS.h"
 
 struct DriverLicense {
-	string fullName ="", streetAddress = "", city = "", state = "", eyeColor = "";
-	unsigned int zipCode =0, birthDate = 0, issueDate = 0, expirationDate = 0, height = 0, weight = 0, licenseNumber = 0;
-	char gender = 'O';
+	string fullName ="", streetAddress = "", city = "", state = "";
+	unsigned int  licenseNumber = 0;
 };
 map<string, DriverLicense> theDatabase;
 
@@ -35,29 +34,16 @@ bool printRecord(const string& key) {
 	if (theDatabase.count(key) == 0) return false;
 	cout << endl 
 		<< theDatabase[key].fullName << endl << theDatabase[key].streetAddress << endl
-		<< theDatabase[key].city << endl << theDatabase[key].state << endl << theDatabase[key].zipCode << endl 
-		<< endl
-		<< "Birth_Date....... " << theDatabase[key].birthDate << endl 
-		<< "Gender .......... " << theDatabase[key].gender 
-						   	   << "  ...(Using letters M,F,O, to indicate Male, Female, or Other)"<< endl
-		<< "Height .......... " << theDatabase[key].height 
-							   << "  ...(Three digit integer: first digit represents feet; last two represent inches)" << endl
-		<< "Weight .......... " << theDatabase[key].weight 
-							   << "  ...(in pounds)" << endl
-		<< "Eye_Color........ " << theDatabase[key].eyeColor << endl 
-		<< endl 
-		<< "License_Number... " << theDatabase[key].licenseNumber << endl 
-		<< "Expiration_Date.. " << theDatabase[key].expirationDate << endl
-		<< "Issue_Date....... " << theDatabase[key].issueDate << endl 
-		<< endl;
+		<< theDatabase[key].city << endl << theDatabase[key].state <<endl
+		<< "License Number: " << theDatabase[key].licenseNumber << endl << endl;
 	return true;
 }
 bool inputRecord(DriverLicense& record) {
 
 	string userInput;
-	int i;
-
+	unsigned int i;
 	cout << endl;
+
 	do {
 		cout << "Enter full name: ";
 	} while (!(readLine(userInput)));
@@ -78,21 +64,16 @@ bool inputRecord(DriverLicense& record) {
 	} while (!(readLine(userInput)));
 	record.state = userInput;
 
-	do {
-		cout << "Enter the 5 digit zip code. ";
-		i = (int)(getPosInt());
-	} while ( i > 99999 );
-	record.zipCode = i;
+	cout << "Enter License number. ";
+	i = getPosInt();
+	record.licenseNumber = i;
 
+	cout << endl;
 	return true;
 }
 
 int main() {
-	createRecord("key");
-	if (theDatabase.count("key") == 1) {
-		theDatabase["key"].birthDate = 12;
-		cout << theDatabase["key"].birthDate << endl<< theDatabase["key"].eyeColor<<endl;
-	}
+
 	return 0;
 }
 
