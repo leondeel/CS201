@@ -1,5 +1,8 @@
 
 #include "C:\Users\M. Ariel Hernandez\source\repos\cs201\my_standard_library.h"
+#include "C:\Users\M. Ariel Hernandez\source\repos\cs201\Homework4\tokenizer\analyzeTokens.h"
+#include "C:\Users\M. Ariel Hernandez\source\repos\cs201\Homework4\tokenizer\readLine.h"
+#include "C:\Users\M. Ariel Hernandez\source\repos\cs201\Homework4\tokenizer\stringToTokenWS.h"
 
 struct DriverLicense {
 	string fullName ="", streetAddress = "", city = "", state = "", eyeColor = "";
@@ -49,13 +52,27 @@ bool printRecord(const string& key) {
 		<< endl;
 	return true;
 }
+bool inputRecord(DriverLicense& record) {
+
+	string userInput;
+	cout << endl;
+	do {
+		cout << "Enter full name: ";
+	} while (!(readLine(userInput)));
+	record.fullName = userInput;
+	do {
+		cout << "Enter street address: ";
+	} while (!(readLine(userInput)));
+	do {
+		cout << "Enter city: ";
+	} while (!(readLine(userInput)));
+	do {
+		cout << "Enter state: ";
+	} while (!(readLine(userInput)));
 
 
-// Instructions for inputRecord are missing, and it is not at all obvious what I'm supposed to do. 
-// So I'm not going to include this function in the homework.
-#if 0
-bool inputRecord(DriverLicense& record);
-#endif
+	return true;
+}
 
 int main() {
 	createRecord("key");
