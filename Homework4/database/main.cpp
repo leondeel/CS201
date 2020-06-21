@@ -3,9 +3,9 @@
 
 
 struct DriverLicense {
-	string fullName, streetAddress, city, state, eyeColor;
-	unsigned int zipCode, birthDate, issueDate, expirationDate, height, weight, licenseNumber;
-	char gender;
+	string fullName ="", streetAddress = "", city = "", state = "", eyeColor = "";
+	unsigned int zipCode =0, birthDate = 0, issueDate = 0, expirationDate = 0, height = 0, weight = 0, licenseNumber = 0;
+	char gender = 'O';
 
 };
 
@@ -21,13 +21,13 @@ bool printRecord(const string& key);
 #endif
 
 bool createRecord(const string& key) {
-	if (theDatabase.count("key") == 1 ) return false;
-	theDatabase["key"];
+	if (theDatabase.count(key) == 1 ) return false;
+	theDatabase[key];
 	return true;
 }
 bool readRecord(const string& key, DriverLicense& record) {
-	if (theDatabase.count("key") == 0) return false;
-	record = theDatabase["key"];
+	if (theDatabase.count(key) == 0) return false;
+	record = theDatabase[key];
 	return true;
 }
 
