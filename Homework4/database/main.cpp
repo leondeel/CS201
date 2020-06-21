@@ -1,12 +1,10 @@
 
 #include "C:\Users\M. Ariel Hernandez\source\repos\cs201\my_standard_library.h"
 
-
 struct DriverLicense {
 	string fullName ="", streetAddress = "", city = "", state = "", eyeColor = "";
 	unsigned int zipCode =0, birthDate = 0, issueDate = 0, expirationDate = 0, height = 0, weight = 0, licenseNumber = 0;
 	char gender = 'O';
-
 };
 map<string, DriverLicense> theDatabase;
 
@@ -36,18 +34,18 @@ bool printRecord(const string& key) {
 		<< theDatabase[key].fullName << endl << theDatabase[key].streetAddress << endl
 		<< theDatabase[key].city << endl << theDatabase[key].state << endl << theDatabase[key].zipCode << endl 
 		<< endl
-		<< "BirthDate....... " << theDatabase[key].birthDate << endl 
-		<< "Gender ......... " << theDatabase[key].gender 
+		<< "Birth_Date....... " << theDatabase[key].birthDate << endl 
+		<< "Gender .......... " << theDatabase[key].gender 
 						   	   << "  ...(Using letters M,F,O, to indicate Male, Female, or Other)"<< endl
-		<< "Height ......... " << theDatabase[key].height 
+		<< "Height .......... " << theDatabase[key].height 
 							   << "  ...(Three digit integer: first digit represents feet; last two represent inches)" << endl
-		<< "Weight ......... " << theDatabase[key].weight 
+		<< "Weight .......... " << theDatabase[key].weight 
 							   << "  ...(in pounds)" << endl
-		<< "EyeColor........ " << theDatabase[key].eyeColor << endl 
+		<< "Eye_Color........ " << theDatabase[key].eyeColor << endl 
 		<< endl 
-		<< "LicenseNumber... " << theDatabase[key].licenseNumber << endl 
-		<< "ExpirationDate.. " << theDatabase[key].expirationDate << endl
-		<< "IssueDate....... " << theDatabase[key].issueDate << endl 
+		<< "License_Number... " << theDatabase[key].licenseNumber << endl 
+		<< "Expiration_Date.. " << theDatabase[key].expirationDate << endl
+		<< "Issue_Date....... " << theDatabase[key].issueDate << endl 
 		<< endl;
 	return true;
 }
