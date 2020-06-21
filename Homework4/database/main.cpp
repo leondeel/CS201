@@ -8,6 +8,9 @@ struct DriverLicense {
 	char gender;
 
 };
+
+map<string, DriverLicense> theDatabase;
+
 #if 0
 bool createRecord(const string& key);
 bool readRecord(const string& key, DriverLicense& record);
@@ -17,26 +20,23 @@ bool inputRecord(DriverLicense& record);
 bool printRecord(const string& key);
 #endif
 
-map<string, DriverLicense> theDatabase;
-
 bool createRecord(const string& key) {
-	if (theDatabase.find("key") != theDatabase.end()) return false;
-	theDatabase["key"] = {};
+	if (theDatabase.count("key") == 1 ) return false;
+	theDatabase["key"];
 	return true;
 }
 bool readRecord(const string& key, DriverLicense& record) {
-	if (theDatabase.find("key") == theDatabase.end()) return false;
+	if (theDatabase.count("key") == 0) return false;
 	record = theDatabase["key"];
 	return true;
 }
 
-
-
 int main() {
-	theDatabase["key"].birthDate = 12;
-	bool a = createRecord("key");
-	cout << theDatabase["key"].birthDate << endl<< a;
-
+	createRecord("key");
+	if (theDatabase.count("key") == 1) {
+		theDatabase["key"].birthDate = 12;
+		cout << theDatabase["key"].birthDate << endl<< theDatabase["key"].eyeColor<<endl;
+	}
 	return 0;
 }
 
