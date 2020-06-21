@@ -10,14 +10,6 @@ struct DriverLicense {
 };
 map<string, DriverLicense> theDatabase;
 
-#if 0
-bool createRecord(const string& key);
-bool readRecord(const string& key, DriverLicense& record);
-bool updateRecord(const string& key, const DriverLicense& record);
-bool deleteRecord(const string& key);
-bool printRecord(const string& key);
-#endif
-#if 1
 bool createRecord(const string& key) {
 	if (theDatabase.count(key) == 1 ) return false;
 	theDatabase[key];
@@ -60,7 +52,6 @@ bool printRecord(const string& key) {
 	return true;
 }
 
-#endif
 
 // Instructions for inputRecord are missing, and it is not at all obvious what I'm supposed to do. 
 // So I'm not going to include this function in the homework.
