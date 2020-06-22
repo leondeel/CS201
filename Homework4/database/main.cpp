@@ -8,26 +8,6 @@ struct DriverLicense {
 };
 map<string, DriverLicense> theDatabase;
 
-string getkey() {
-	string key;
-	bool contin = true;
-	do {
-		cout << "Enter a string with no white spaces:  ";
-		getline(cin, key);
-		for (auto n : key)
-		{
-			if (
-				(n == ' '
-					|| n == '\t'
-					|| n == '\n'
-					|| n == '\v'
-					|| n == '\f'
-					|| n == '\r')
-				) contin = false;
-		}
-	} while (contin);
-	return key;
-}
 bool createRecord(const string& key) {
 	if (theDatabase.count(key) == 1 ) return false;
 	theDatabase[key];
@@ -82,9 +62,31 @@ bool inputRecord(DriverLicense& record) {
 	cout << endl;
 	return true;
 }
+string getkey() {
+	string key;
+	bool contin = true;
+	do {
+		cout << "Enter a string with no white spaces:  ";
+		getline(cin, key);
+		for (auto n : key)
+		{
+			if (
+				(n == ' '
+					|| n == '\t'
+					|| n == '\n'
+					|| n == '\v'
+					|| n == '\f'
+					|| n == '\r')
+				) contin = false;
+		}
+	} while (contin);
+	return key;
+}
 
 int main() {
-	string key;
+	string licenseNumber;
+	cout << "Hello! Welcome to My Simple DataBase Manager" << endl
+		<< "Would you like to Create, Read, Update, or Delete?  Please answer the letters C, R, U, D, respectively:  ";
 
 	return 0;
 }
