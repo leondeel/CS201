@@ -92,13 +92,13 @@ int main() {
 		do {
 			cout << "Please answer only with the letters c, r, u, d, respectively:  ";
 			getline(cin, key);
-			if (
-				key[0] == 'c' ||
-				key[0] == 'r' ||
-				key[0] == 'u' ||
-				key[0] == 'd'
-				) break;
-		} while (true);
+				
+		} while (
+			key[0] == 'c' ||
+			key[0] == 'r' ||
+			key[0] == 'u' ||
+			key[0] == 'd'
+			);
 
 		if (key[0] == 'c') {
 			cout << "Alright! So you wish to create a new record." << endl
@@ -134,21 +134,37 @@ int main() {
 			} while (userContinues());
 		}
 		if (key[0] == 'u') {
-			cout << "Alright! So you wish to UPDATE a record. Do you wish to UPDATE a record by overwriting it from a copy of"<<
-				" a previously READ record, or do you wish to re-write it from scratch?"<<endl;
-				
-				
-				cout<<"Please enter a Driver's License String to search for. " << endl;
-			do {
-				key = getkey();
-				if (createRecord(key)) {
-					inputRecord(record);
-					cout << "A new record has succesfully been created with the License String: " << key << endl;
-					break;
-				}
-				cout << "That License String already exists! Are you done trying to create a new record?" << endl;
-			} while (userContinues());
+			cout << "Alright! So you wish to UPDATE a record! Now, do you wish to UPDATE a record by overwriting it from a copy of" <<
+				" a previously READ record, or do you wish to re-write it from scratch?" << endl <<
+				"If you wish to rewrite it from scratch, enter \"yes\", " << endl <<
+				"else, if you wish to UPDATE with a copy (assuming you've already made a copy by using READ), " << endl <<
+				"enter anything else that doesn't start with the letter 'y'." << endl;
+			if (userYesNo()) {
+				cout << "First enter all of the following information with which you will overwrite the record." << endl;
+				inputRecord(record);
+				cout << "Please enter the Driver's License String whose record you wish to update: " << endl;
+				do {
+					key = getkey();
+					if (updateRecord(key, record)) {
+						cout << "The record has been successfully updated." << endl;
+						break;
+					}
+					cout << "That License String doesn't exist! Are you sure you want to UPDATE a record?" << endl;
+				} while (userContinues());
+			}
+			else {
+				cout << "Please enter the Driver's License String whose record you wish to replace with the copy: " << endl;
+				do {
+					key = getkey();
+					if (updateRecord(key, record)) {
+						cout << "The record has been successfully updated." << endl;
+						break;
+					}
+					cout << "That License String doesn't exist! Are you sure you want to UPDATE a record?" << endl;
+				} while (userContinues());
+			}
 		}
+
 		cout << "Are you done managing the database? ";
 	} while (userContinues());
 	return 0;

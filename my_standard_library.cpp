@@ -29,8 +29,8 @@ bool userYesNo() {
 //This prompts the user to choose between exiting the program or continuing.
 bool userContinues() {
 
-	cout << "Do you wish to continue?  If so, enter \'y\'. " << endl
-		<< "Otherwise, press enter, or enter anything else that doesn't start with the letter \'y\'....   " << endl;
+	cout << "Do you wish to continue?  If so, enter \"y\". " << endl
+		<< "Otherwise, press enter, or enter anything else that doesn't start with the letter \"y\"....   " << endl;
 	return userYesNo();
 }
 
