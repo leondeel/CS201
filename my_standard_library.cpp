@@ -23,7 +23,7 @@ bool userContinues() {
 
 	string userExit;
 	cout << "Do you wish to continue?  If so, enter \'y\'. " << endl
-		<< "Otherwise, if you wish to exit, press enter, or enter anything else that doesn't start with the letter \'y\'....   " << endl;
+		<< "Otherwise, press enter, or enter anything else that doesn't start with the letter \'y\'....   " << endl;
 	getline(cin, userExit);
 	if (userExit[0] == 'Y' || userExit[0] == 'y') {
 		return true;

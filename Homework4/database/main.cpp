@@ -64,20 +64,20 @@ bool inputRecord(DriverLicense& record) {
 }
 string getkey() {
 	string key;
-	bool contin = true;
+	bool contin = false;
 	do {
 		cout << "Enter a string with no white spaces:  ";
 		getline(cin, key);
 		for (auto n : key)
 		{
 			if (
-				(n == ' '
-					|| n == '\t'
-					|| n == '\n'
-					|| n == '\v'
-					|| n == '\f'
-					|| n == '\r')
-				) contin = false;
+				n == ' '  || 
+				n == '\t' || 
+				n == '\n' || 
+				n == '\v' || 
+				n == '\f' || 
+				n == '\r'
+				) contin = true;
 		}
 	} while (contin);
 	return key;
