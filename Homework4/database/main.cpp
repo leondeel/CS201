@@ -94,12 +94,12 @@ int main() {
 			getline(cin, key);
 				
 		} while (
-			key[0] == 'c' ||
-			key[0] == 'r' ||
-			key[0] == 'u' ||
-			key[0] == 'd'
+			key[0] != 'c' &&
+			key[0] != 'r' &&
+			key[0] != 'u' &&
+			key[0] != 'd'
 			);
-
+		cout << endl;
 		if (key[0] == 'c') {
 			cout << "Alright! So you wish to CREATE a new record." << endl
 				<< "Please enter a Driver's License Number (or Driver's License String) for the new record. "<<endl;
@@ -110,7 +110,7 @@ int main() {
 						cout << "A new record has succesfully been created with the License String: "<< key << endl;
 						break;
 					}
-					cout << "That License String already exists! Are you done trying to create a new record?"<<endl;
+					cout << "That License String already exists! Are you done trying to create a new record? ";
 				} while (userContinues());
 		}
 		else if (key[0] == 'r') {
@@ -130,7 +130,7 @@ int main() {
 				else {
 					cout << "That License String doesn't exist! ";
 				}
-				cout << "Are you done searching and reading records?" << endl;
+				cout << "Are you done searching and reading records? ";
 			} while (userContinues());
 		}
 		else if (key[0] == 'u') {
