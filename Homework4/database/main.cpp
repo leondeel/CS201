@@ -64,8 +64,9 @@ bool inputRecord(DriverLicense& record) {
 }
 string getkey() {
 	string key;
-	bool contin = false;
+	bool contin;
 	do {
+		contin = false;
 		do {
 			cout << "Enter a string with no white spaces:  ";
 		} while (!(readLine(key)));
