@@ -88,7 +88,7 @@ int main() {
 	DriverLicense record;
 	cout << "Hello! Welcome to My Simple DataBase Manager for Driver's Licenses." << endl;
 	do {
-		cout << "Would you like to Create, Read, Update, or Delete a record in this database?" << endl;
+		cout << "Would you like to CREATE, READ, UPDATE, or DELETE a record in this database?" << endl;
 		do {
 			cout << "Please answer only with the letters c, r, u, d, respectively:  ";
 			getline(cin, key);
@@ -113,8 +113,42 @@ int main() {
 					cout << "That License String already exists! Are you done trying to create a new record?"<<endl;
 				} while (userContinues());
 		}
-
-
+		if (key[0] == 'r') {
+			cout << 
+				"Alright! So you wish to read a record. "<<endl<<
+				"(Or you wish to just find a record with a matching key, or copy it to UPDATE another by overwriting it later.)" 
+				<< endl << "Please enter a Driver's License Number (or Driver's License String) to search for. " << endl;
+			do {
+				key = getkey();
+				if (readRecord(key, record)) {
+					cout << 
+						"A record with that license string exists.  This record has now been copied, "<<
+						"so you can overwrite another record with it by \"updating\" it if want. "<<
+						"Here is what the record you searched for contains: " << endl;
+					printRecord(key);
+				}
+				else {
+					cout << "That License String doesn't exist! ";
+				}
+				cout << "Are you done searching and reading records?" << endl;
+			} while (userContinues());
+		}
+		if (key[0] == 'u') {
+			cout << "Alright! So you wish to UPDATE a record. Do you wish to UPDATE a record by overwriting it from a copy of"<<
+				" a previously READ record, or do you wish to re-write it from scratch?"<<endl;
+				
+				
+				cout<<"Please enter a Driver's License String to search for. " << endl;
+			do {
+				key = getkey();
+				if (createRecord(key)) {
+					inputRecord(record);
+					cout << "A new record has succesfully been created with the License String: " << key << endl;
+					break;
+				}
+				cout << "That License String already exists! Are you done trying to create a new record?" << endl;
+			} while (userContinues());
+		}
 		cout << "Are you done managing the database? ";
 	} while (userContinues());
 	return 0;

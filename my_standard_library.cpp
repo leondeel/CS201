@@ -17,18 +17,21 @@ unsigned int getPosInt() {//This prompts the user for a positive integer and err
 	}
 	return boxLayers;
 }
-
-//This prompts the user to choose between exiting the program or continuing.
-bool userContinues() {
-
+bool userYesNo() {
 	string userExit;
-	cout << "Do you wish to continue?  If so, enter \'y\'. " << endl
-		<< "Otherwise, press enter, or enter anything else that doesn't start with the letter \'y\'....   " << endl;
 	getline(cin, userExit);
 	if (userExit[0] == 'Y' || userExit[0] == 'y') {
 		return true;
 	}
 	return false;
+}
+
+//This prompts the user to choose between exiting the program or continuing.
+bool userContinues() {
+
+	cout << "Do you wish to continue?  If so, enter \'y\'. " << endl
+		<< "Otherwise, press enter, or enter anything else that doesn't start with the letter \'y\'....   " << endl;
+	return userYesNo();
 }
 
 

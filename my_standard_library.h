@@ -32,7 +32,7 @@ using std::min_element;
 using std::istringstream;
 using std::map;
 #endif
-
+bool userYesNo();
 unsigned int getPosInt();
 bool userContinues();
 long double getDouble();
