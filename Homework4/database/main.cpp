@@ -85,6 +85,7 @@ string getkey() {
 
 int main() {
 	string key;
+	DriverLicense record;
 	cout << "Hello! Welcome to My Simple DataBase Manager for Driver's Licenses." << endl;
 	do {
 		cout << "Would you like to Create, Read, Update, or Delete a record in this database?" << endl;
@@ -105,12 +106,14 @@ int main() {
 				do {
 					key = getkey();
 					if (createRecord(key)) {
-
+						inputRecord(record);
+						cout << "A new record has succesfully been created with the License String: "<< key << endl;
 						break;
 					}
 					cout << "That License String already exists! Are you done trying to create a new record?"<<endl;
 				} while (userContinues());
 		}
+
 
 		cout << "Are you done managing the database? ";
 	} while (userContinues());
