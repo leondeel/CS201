@@ -30,7 +30,7 @@ bool deleteRecord(const string& key) {
 }
 bool printRecord(const string& key) {
 	if (theDatabase.count(key) == 0) return false;
-	cout << endl 
+	cout << endl
 		<< theDatabase[key].fullName << endl << theDatabase[key].streetAddress << endl
 		<< theDatabase[key].city << endl << theDatabase[key].state <<endl<< endl;
 	return true;
@@ -86,6 +86,7 @@ string getkey() {
 int main() {
 	string key;
 	DriverLicense record;
+
 	cout << "Hello! Welcome to My Simple DataBase Manager for Driver's Licenses." << endl;
 	do {
 		cout << "Would you like to CREATE, READ, UPDATE, or DELETE a record in this database?" << endl;
@@ -123,9 +124,12 @@ int main() {
 				if (readRecord(key, record)) {
 					cout << 
 						"A record with that license string exists.  This record has now been copied, "<<
-						"so you can overwrite another record by doing UPDATE, if you want. "<<
+						"so you can overwrite another record by doing UPDATE, if you want. "<<endl<<
 						"Here is what the record you searched for contains: " << endl;
 					printRecord(key);
+
+					theDatabase[key].fullName = "mah";   //  How come this works but printRecord doesn't????
+					cout << theDatabase[key].fullName << endl;//  Why?  what's going on here?
 				}
 				else {
 					cout << "That License String doesn't exist! ";
