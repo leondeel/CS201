@@ -123,7 +123,7 @@ int main() {
 				if (readRecord(key, record)) {
 					cout << 
 						"A record with that license string exists.  This record has now been copied, "<<
-						"so you can overwrite another record with it by \"updating\" it if want. "<<
+						"so you can overwrite another record by doing UPDATE, if you want. "<<
 						"Here is what the record you searched for contains: " << endl;
 					printRecord(key);
 				}
