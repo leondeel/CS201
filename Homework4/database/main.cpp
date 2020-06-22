@@ -84,10 +84,23 @@ string getkey() {
 }
 
 int main() {
-	string licenseNumber;
-	cout << "Hello! Welcome to My Simple DataBase Manager" << endl
-		<< "Would you like to Create, Read, Update, or Delete?  Please answer the letters C, R, U, D, respectively:  ";
+	string key;
+	cout << "Hello! Welcome to My Simple DataBase Manager." << endl;
+	do {
+		cout << "Would you like to Create, Read, Update, or Delete a record in this database?" << endl;
+		do {
+			cout << "Please answer only with the letters c, r, u, d, respectively:  ";
+			getline(cin, key);
+			if (
+				key[0] == 'c' ||
+				key[0] == 'r' ||
+				key[0] == 'u' ||
+				key[0] == 'd'
+				) break;
+		} while (true);
 
+
+	} while (userContinues());
 	return 0;
 }
 

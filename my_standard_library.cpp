@@ -22,8 +22,8 @@ unsigned int getPosInt() {//This prompts the user for a positive integer and err
 bool userContinues() {
 
 	string userExit;
-	cout << "\n\nDo you wish to repeat that?  If so, enter \"yes\". " << endl
-		<< "Otherwise, if you wish to exit, press enter, or enter anything else that doesn't start with the letter \"y\"....   " << endl;
+	cout << "\n\nDo you wish to continue?  If so, enter \'y\'. " << endl
+		<< "Otherwise, if you wish to exit, press enter, or enter anything else that doesn't start with the letter \'y\'....   " << endl;
 	getline(cin, userExit);
 	if (userExit[0] == 'Y' || userExit[0] == 'y') {
 		return true;
