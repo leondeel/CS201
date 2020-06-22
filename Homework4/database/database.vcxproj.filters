@@ -21,13 +21,7 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\tokenizer\analyzeTokens.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\tokenizer\readLine.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\tokenizer\stringToTokenWS.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -35,13 +29,7 @@
     <ClInclude Include="..\..\my_standard_library.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\tokenizer\analyzeTokens.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\tokenizer\readLine.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\tokenizer\stringtoTokenWS.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
