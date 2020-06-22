@@ -90,7 +90,7 @@ int main() {
 	do {
 		cout << "Would you like to CREATE, READ, UPDATE, or DELETE a record in this database?" << endl;
 		do {
-			cout << "Please answer only with the letters c, r, u, d, respectively:  ";
+			cout << "Please answer only with the lowercase letters c, r, u, d, respectively:  ";
 			getline(cin, key);
 				
 		} while (
@@ -166,16 +166,15 @@ int main() {
 		}
 		else {
 			cout << "Alright! So you wish to DELETE a record." << endl
-				<< "Please enter a Driver's License String for the record you wish to DELETE. " << endl;
+				<< "Please enter the Driver's License String for the record you wish to DELETE. " << endl;
 			do {
 				key = getkey();
-				if (createRecord(key)) {
-					inputRecord(record);
-					cout << "A new record has succesfully been created with the License String: " << key << endl;
+				if (deleteRecord(key)) {
+					cout << "The record has been successfully deleted." << endl;
 					break;
 				}
-				cout << "That License String already exists! Are you done trying to create a new record?" << endl;
-			} while (userContinues());
+				cout << "That License String doesn't exist! Do you still wish to DELETE a record? Yes or no? ";
+			} while (userYesNo());
 		}
 		cout << "Are you done managing the database? ";
 	} while (userContinues());
