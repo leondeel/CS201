@@ -10,7 +10,7 @@ map<string, DriverLicense> theDatabase;
 
 bool createRecord(const string& key) {
 	if (theDatabase.count(key) == 1 ) return false;
-	theDatabase[key] = {"a", "b", "c", "d"};
+	theDatabase[key];
 	return true;
 }
 bool readRecord(const string& key, DriverLicense& record) {
