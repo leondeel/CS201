@@ -196,7 +196,7 @@ int main() {
 				cout << "That License String doesn't exist! Do you still wish to DELETE a record? Yes or no? ";
 			} while (userYesNo());
 		}
-		cout << "Are you done managing the database? ";
+		cout << "Are you still working on this database? ";
 	} while (userContinues());
 	return 0;
 }
