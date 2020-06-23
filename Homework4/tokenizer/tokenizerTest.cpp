@@ -1,4 +1,4 @@
-#include "main.h"
+#include "tokenizer.h"
 
 int main() {
 	do {

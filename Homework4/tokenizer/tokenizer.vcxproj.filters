@@ -18,33 +18,18 @@
     <ClInclude Include="..\..\my_standard_library.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="analyzeTokens.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="readLine.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="stringtoTokenWS.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="main.h">
+    <ClInclude Include="tokenizer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="readLine.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="stringToTokenWS.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="analyzeTokens.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\my_standard_library.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tokenizer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tokenizerTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

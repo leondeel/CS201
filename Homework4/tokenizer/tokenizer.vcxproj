@@ -139,17 +139,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\my_standard_library.cpp" />
-    <ClCompile Include="analyzeTokens.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="readLine.cpp" />
-    <ClCompile Include="stringToTokenWS.cpp" />
+    <ClCompile Include="tokenizerTest.cpp" />
+    <ClCompile Include="tokenizer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\my_standard_library.h" />
-    <ClInclude Include="analyzeTokens.h" />
-    <ClInclude Include="main.h" />
-    <ClInclude Include="readLine.h" />
-    <ClInclude Include="stringtoTokenWS.h" />
+    <ClInclude Include="tokenizer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
