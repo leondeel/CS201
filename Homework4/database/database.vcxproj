@@ -140,11 +140,13 @@
   <ItemGroup>
     <ClCompile Include="..\..\my_standard_library.cpp" />
     <ClCompile Include="..\tokenizer\readLine.cpp" />
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="crud.cpp" />
+    <ClCompile Include="database.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\my_standard_library.h" />
     <ClInclude Include="..\tokenizer\readLine.h" />
+    <ClInclude Include="database.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
