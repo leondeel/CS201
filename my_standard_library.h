@@ -20,6 +20,7 @@
 #include <cstdlib>
 #include <cmath>
 #include <bitset>
+#include <random>
 
 using std::bitset;
 using std::cout;
