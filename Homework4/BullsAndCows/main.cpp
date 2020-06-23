@@ -7,7 +7,8 @@ int main(){
 	std::mt19937 generator(seed()); // "generator" for pseudo-random numbers takes "seed" as a parameter only once.
 
 	std::uniform_int_distribution<unsigned short> distribution('0', '9'); //"distribution" will behave as a function that takes "generator"
-														   // as a parameter, and the "distribution" will RETURN a random short from 0 to 9.
+														   // as a parameter, and the "distribution" will RETURN a random short from 0 to 9
+															// every single time "distribuiton" is called with "generator" as the parameter.
 
 	vector<unsigned short> fourDigits(4);  //initializes a vector of 4 of unsigned shorts.
 	string userInput;
