@@ -39,4 +39,4 @@ bool userContinues();
 long double getDouble();
 
 
-#endif
+#endif  // my_standard_library_header
