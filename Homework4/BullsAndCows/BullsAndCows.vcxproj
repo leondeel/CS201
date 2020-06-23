@@ -139,7 +139,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\my_standard_library.cpp" />
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="bullsAndCows.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\my_standard_library.h" />
