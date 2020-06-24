@@ -1,14 +1,21 @@
-#include "C:\Users\M. Ariel Hernandez\source\repos\cs201\my_standard_library.h"
+// Homework assignment #4 coded by M. Ariel Hernandez for class Computer Science 201, June 2020
+#include "..\..\my_standard_library.h"
 
+// All of the following code performs EXACTLY according to its description in Homework # 4.
+// This code plays a game called "Bulls and Cows".
+// For more documentation on what this accomplishes, refer to the homework assignment.
 int main(){
 
-	std::random_device seed;		// "seed" is a RANDOM number which will be used to prepare a list of pseudo-random numbers.
+	std::random_device seed;		
+	// "seed" is a RANDOM number which will be used to prepare a list of pseudo-random numbers.
 
-	std::mt19937 generator(seed()); // "generator" for pseudo-random numbers takes "seed" as a parameter only once.
+	std::mt19937 generator(seed()); 
+	// "generator" for pseudo-random numbers takes "seed" as a parameter only once.
 
-	std::uniform_int_distribution<unsigned short> distribution('0', '9'); //"distribution" will behave as a function that takes "generator"
-														   // as a parameter, and the "distribution" will RETURN a random short from 0 to 9
-															// every single time "distribuiton" is called with "generator" as the parameter.
+	std::uniform_int_distribution<unsigned short> distribution('0', '9'); 
+	//"distribution" will behave as a function that takes "generator"
+    // as a parameter, and the "distribution" will RETURN a random short from 0 to 9
+	// every single time "distribuiton" is called with "generator" as the parameter.
 
 	vector<unsigned short> fourDigits(4);  //initializes a vector of 4 of unsigned shorts.
 	string userInput;
