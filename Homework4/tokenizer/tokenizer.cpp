@@ -1,6 +1,9 @@
+// Homework assignment #4 coded by M. Ariel Hernandez for class Computer Science 201, June 2020
 
 #include "tokenizer.h"
 
+// All of the following functions perform EXACTLY according to their description in Homework # 4.
+// For more documentation on what these functions accomplish, refer to the homework assignment.
 void analyzeTokens(const vector<string>& tokens)
 {
 	string::iterator lastLetter;
@@ -87,7 +90,7 @@ bool readLine(string& str)
 {
 	getline(cin, str);
 	if (str.size() == 0) return false;
-	for (auto n : str)
+	for (auto n : str)   // This for-loops checks to make sure the user doesn't enter a blank line.
 	{
 		if (
 			!(n == ' '

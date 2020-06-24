@@ -1,5 +1,8 @@
+// Homework assignment #4 coded by M. Ariel Hernandez for class Computer Science 201, June 2020
 #include "tokenizer.h"
 
+// The following main() satisifies the requirements of Homework # 4.
+// For more documentation on what this code accomplishes, refer to the homework assignment.
 int main() {
 	do {
 		vector<string> tokens(1);

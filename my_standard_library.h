@@ -1,3 +1,5 @@
+// Coded by M. Ariel Hernandez for class Computer Science 201, June 2020
+
 #ifndef my_standard_library_header
 #define my_standard_library_header
 //#warning my_standard_library.h included
@@ -33,10 +35,11 @@ using std::min_element;
 using std::istringstream;
 using std::map;
 #endif
+
+// useful functions I often use.
 bool userYesNo();
 unsigned int getPosInt();
 bool userContinues();
 long double getDouble();
-
 
 #endif  // my_standard_library_header
