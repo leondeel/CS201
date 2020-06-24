@@ -128,5 +128,3 @@ unsigned int stringToTokensWS(const string& input, vector<string>& tokens)
 	tokens.push_back("\n");
 	return (unsigned int)(tokens.size());
 }
-
-
