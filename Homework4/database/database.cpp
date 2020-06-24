@@ -1,6 +1,9 @@
+// Homework assignment #4 coded by M. Ariel Hernandez for class Computer Science 201, June 2020
 #include "database.h"
 
-
+//ALL of the following code performs EXACTLY according to its description in Homework # 4.
+// It's a primitive database manager.
+// For more documentation on what these functions accomplish, refer to the homework assignment.
 int main() {
 	string key;
 	DriverLicense record;
@@ -22,15 +25,17 @@ int main() {
 		if (key[0] == 'c') {
 			cout << "Alright! So you wish to CREATE a new record." << endl;
 				do {
-					cout<< "Please enter a Driver's License Number (or Driver's License String) for the new record. " << endl;
+					cout<< "Please enter a Driver's License Number (or Driver's License String) for the new record. " 
+						<< endl;
 					key = getkey();
 					if (createRecord(key)) {
 						cout <<endl<<
-							"You have sucessfuly entered a Driver's License String. Now, do you wish to CREATE a record from " << endl << 
-							"a copy of a previously READ record, or do you wish to write it from scratch?" << endl <<
-							"If you wish to write it from scratch, enter \"yes\", " << endl <<
-							"else, if you wish to CREATE with a copy (assuming you've already made a copy by using READ), " << endl <<
-							"enter anything else that doesn't start with the letter 'y'." << endl;
+						"You have sucessfuly entered a Driver's License String. Now, do you wish to CREATE a record from " 
+						<< endl << 
+						"a copy of a previously READ record, or do you wish to write it from scratch?" << endl <<
+						"If you wish to write it from scratch, enter \"yes\", " << endl <<
+						"else, if you wish to CREATE with a copy (assuming you've already made a copy by using READ), " << endl <<
+						"enter anything else that doesn't start with the letter 'y'." << endl;
 
 						if (userYesNo()) {
 							inputRecord(record);

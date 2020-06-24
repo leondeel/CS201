@@ -1,7 +1,10 @@
 #include "database.h"
-map<string, DriverLicense> theDatabase;  //  I think this is a global variable.  But WHY can't I just declare it in the header for database?!
+map<string, DriverLicense> theDatabase;  
+//  I think this is a sort of a global variable.  But WHY can't I just declare it in the header for database?!
 
-
+// Note: except for getKey()
+// all of the following functions perform EXACTLY according to their description in Homework # 4.
+// For more documentation on what these functions accomplish, refer to the homework assignment.
 bool createRecord(const string& key) {
 	if (theDatabase.count(key) == 1) return false;
 	theDatabase[key];
@@ -56,7 +59,7 @@ bool inputRecord(DriverLicense& record) {
 	cout << endl;
 	return true;
 }
-string getkey() {
+string getkey() { //Prompts user to enter string with no whitespaces.  This is used as the database key.
 	string key;
 	bool contin;
 	do {
