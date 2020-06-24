@@ -20,5 +20,4 @@ bool inputRecord(DriverLicense& record);
 
 string getkey();  //Prompts user to enter string with no whitespaces.  This is used as the database key.
 
-
 #endif

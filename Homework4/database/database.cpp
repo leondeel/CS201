@@ -121,4 +121,3 @@ int main() {
 	} while (userContinues());
 	return 0;
 }
-
