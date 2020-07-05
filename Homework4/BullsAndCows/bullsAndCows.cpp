@@ -7,7 +7,8 @@
 int main(){
 
 	std::random_device seed;		
-	// "seed" is a RANDOM number which will be used to prepare a list of pseudo-random numbers.
+	// "seed" returns a RANDOM number when called, 
+	// which will be used to prepare a list of pseudo-random numbers.
 
 	std::mt19937 generator(seed()); 
 	// "generator" for pseudo-random numbers takes "seed" as a parameter only once.
