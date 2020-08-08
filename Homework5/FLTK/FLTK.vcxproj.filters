@@ -15,15 +15,24 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source.cpp">
+    <ClCompile Include="..\..\Labs\lab21\truncstruct.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Labs\lab21\truncstruct.cpp">
+    <ClCompile Include="..\..\my_standard_library.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fltk-truncate.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Labs\lab21\truncstruct.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\my_standard_library.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="fltk-truncate.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

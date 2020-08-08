@@ -6,12 +6,14 @@
 #include <FL\Fl_Window.H>
 #include <FL\Fl_Box.H>
 #include <FL\Fl_Input.H>
-
+#include "..\..\my_standard_library.h"
 
 int main(int argc, char** argv) {
     Fl_Window* window = new Fl_Window(680, 360);
     const int dx = 200;
     const int dy = 33;
+    string sample = "sample text";
+
     Fl_Box* box = new Fl_Box(0, 0, dx, dy, "Instructions go here.");
     box->box(FL_UP_BOX);
     //box->labelfont(FL_BOLD + FL_ITALIC);
