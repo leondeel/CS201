@@ -9,19 +9,21 @@
 #include "..\..\my_standard_library.h"
 
 int main(int argc, char** argv) {
-    Fl_Window* window = new Fl_Window(680, 360);
+
     const int dx = 200;
     const int dy = 33;
-    string sample = "sample text";
+    const char * sample = "sample text";
+    Fl_Window* window = new Fl_Window(680, 360);
+
 
     Fl_Box* box = new Fl_Box(0, 0, dx, dy, "Instructions go here.");
     box->box(FL_UP_BOX);
-    //box->labelfont(FL_BOLD + FL_ITALIC);
     box->labelsize(14);
-    //box->labeltype(FL_SHADOW_LABEL);
     Fl_Input* stringInput = new Fl_Input(0, 1*dy, dx, dy);
-
-
+    Fl_Input* stringInput2 = new Fl_Input(0, 2 * dy, dx, dy);
+    Fl_Box* box2 = new Fl_Box(0, 3 * dy, dx, dy, "Output goes here.");
+    box2->box(FL_UP_BOX);
+    box2->labelsize(14);
 
 
     window->end();
