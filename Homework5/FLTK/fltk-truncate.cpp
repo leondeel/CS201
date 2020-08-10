@@ -16,15 +16,16 @@ int main(int argc, char** argv) {
     Fl_Window* window = new Fl_Window(680, 360);
 
 
-    Fl_Box* box = new Fl_Box(0, 0, dx, dy, "Instructions go here.");
-    box->box(FL_UP_BOX);
-    box->labelsize(14);
+    Fl_Box* infoBox = new Fl_Box(0, 0, dx, dy, "Instructions go here.");
+    infoBox->box(FL_UP_BOX);
+    infoBox->labelsize(14);
     Fl_Input* stringInput = new Fl_Input(0, 1*dy, dx, dy);
     Fl_Input* stringInput2 = new Fl_Input(0, 2 * dy, dx, dy);
-    Fl_Box* box2 = new Fl_Box(0, 3 * dy, dx, dy, "Output goes here.");
-    box2->box(FL_UP_BOX);
-    box2->labelsize(14);
-    Fl_Button* button1 = new Fl_Button(0, 4 * dy, dx, dy, "Truncate.");
+    Fl_Box* outputBox = new Fl_Box(0, 3 * dy, dx, dy, "Output goes here.");
+    outputBox->box(FL_UP_BOX);
+    outputBox->labelsize(14);
+    Fl_Button* truncateButton = new Fl_Button(0, 4 * dy, dx, dy, "Truncate.");
+    Fl_Button* quitButton = new Fl_Button(0, 5 * dy, dx, dy, "Quit.");
 
 
     window->end();
