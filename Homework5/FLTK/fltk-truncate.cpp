@@ -13,9 +13,10 @@ const int dx = 200;
 const int dy = 33;
 Fl_Box infoBox(0, 0, dx, dy, "Instructions go here.");
 Fl_Input stringInput(0, 1 * dy, dx, dy);
-Fl_Button truncateButton(0, 2 * dy, 2 * dx, dy, "Click to display the text you entered.");
+Fl_Input stringInput2(0, 2 * dy, dx, dy);
+Fl_Button truncateButton(0, 3 * dy, 2 * dx, dy, "Click to display the text you entered.");
 Fl_Button quitButton(0, 3 * dy, dx, dy, "Quit.");
-Fl_Output outputBox(0, 4 * dy, dx, dy);
+Fl_Output outputBox(0, 5 * dy, dx, dy);
 
 static void myQuit(Fl_Widget* w, void* userData) {
     exit(1);
