@@ -7,6 +7,17 @@
 #include <FL\Fl_Box.H>
 #include <FL\Fl_Input.H>
 #include "..\..\my_standard_library.h"
+#include <FL\Enumerations.H> 
+#include <FL\Fl_Input_.H>
+
+static void myQuit(Fl_Widget* w, void* userData) {
+    exit(1);
+}
+#if 0
+string copyInput(Fl_Widget* w, void* userData) {
+    w->Fl_Input_::value();
+}
+#endif
 
 int main(int argc, char** argv) {
 
@@ -19,16 +30,14 @@ int main(int argc, char** argv) {
     Fl_Window* window = new Fl_Window(680, 360);
 
 
-    Fl_Box* infoBox = new Fl_Box(0, 0, dx, dy, "Instructions go here.");
-    infoBox->box(FL_UP_BOX);
-    infoBox->labelsize(14);
-    Fl_Input* stringInput = new Fl_Input(0, 1*dy, dx, dy);
-    Fl_Input* stringInput2 = new Fl_Input(0, 2 * dy, dx, dy);
-    Fl_Button* truncateButton = new Fl_Button(0, 3 * dy, dx, dy, "Truncate.");
-    Fl_Button* quitButton = new Fl_Button(0, 4 * dy, dx, dy, "Quit.");
-    Fl_Box* outputBox = new Fl_Box(0, 5 * dy, dx, dy, "Output goes here.");
-    outputBox->box(FL_UP_BOX);
-    outputBox->labelsize(14);
+    Fl_Box infoBox (0, 0, dx, dy, "Instructions go here.");
+ 
+    Fl_Input stringInput(0, 1*dy, dx, dy);
+    Fl_Input stringInput2(0, 2 * dy, dx, dy);
+    Fl_Button truncateButton(0, 3 * dy, dx, dy, "Truncate.");
+    Fl_Button quitButton(0, 4 * dy, dx, dy, "Quit.");
+    quitButton.callback(myQuit);
+    Fl_Box outputBox(0, 5 * dy, dx, dy, "Output goes here.");
 
     window->end();
     window->show(argc, argv);
