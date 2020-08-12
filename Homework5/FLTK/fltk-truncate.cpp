@@ -1,10 +1,11 @@
 #pragma comment(lib, "fltk.lib")
 #pragma comment(lib, "comctl32.lib")
+#include "../../my_standard_library.h"
+#include "truncstruct.hpp"
 #include <FL/Fl_Button.H>
 #include <FL/Fl.H>
 #include <FL/Fl_Window.H>
 #include <FL/Fl_Box.H>
-#include "../../my_standard_library.h"
 #include <FL/Fl_Input_.H>
 #include <FL/Fl_Output.H>
 
@@ -22,6 +23,7 @@ static void myQuit(Fl_Widget* w, void* userData) {
     exit(1);
 }
 static void display_input(Fl_Widget* w, void* userData){
+
     outputBox.value(stringInput.value());
 }
 int main() {
