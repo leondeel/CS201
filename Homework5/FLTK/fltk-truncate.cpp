@@ -4,7 +4,6 @@
 #include <FL/Fl.H>
 #include <FL/Fl_Window.H>
 #include <FL/Fl_Box.H>
-#include <FL/Fl_Input.H>
 #include "../../my_standard_library.h"
 #include <FL/Fl_Input_.H>
 #include <FL/Fl_Output.H>
