@@ -153,7 +153,6 @@
   <ItemGroup>
     <ClInclude Include="..\..\Labs\lab21\truncstruct.hpp" />
     <ClInclude Include="..\..\my_standard_library.h" />
-    <ClInclude Include="fltk-truncate.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

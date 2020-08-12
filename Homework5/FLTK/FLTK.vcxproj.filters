@@ -32,8 +32,5 @@
     <ClInclude Include="..\..\my_standard_library.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="fltk-truncate.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>
