@@ -1,3 +1,7 @@
+// Homework assignment #5 coded by M. Ariel Hernandez for class Computer Science 201, August 2020
+// All of the following code performs EXACTLY according to the description in Homework # 5.
+// For more documentation on what this code accomplishes, refer to the homework assignment.
+
 #pragma comment(lib, "fltk.lib")
 #pragma comment(lib, "comctl32.lib")
 #include "../../my_standard_library.h"
@@ -12,6 +16,17 @@
 #include <cctype>
 using std::toupper;
 
+//I HAD NO CHOICE but to use global variables because I have no other idea on how to get this done.
+//  I knew of no other way, because the lecture on FLTK was never recorded, so I had to figure it out without
+// help.  the website FLTK.ORG was not as helpful as it ought to be for beginners.
+//  Because of the global variables I could not get this code to work by including truncstruct.hpp and 
+// truncstruct.cpp but instead I had to copy and paste sections of the code above main() and above the functions
+ //  that used code from the truncstruct project.  I knew of no other way to make this work.
+
+
+//  Pasted from truncstruct.cpp and truncstruct.hpp
+//************************************************************************************************************
+//************************************************************************************************************
 struct StringInfo {
     std::string str;
     std::size_t len;
@@ -34,6 +49,13 @@ StringInfo trunc(const StringInfo& stringInfo) {
     // Create return value
     return StringInfo{ s, len };
 }
+//*************************************************************************************************************
+
+
+
+//Initializing global objects
+//*************************************************************************************************************
+//************************************************************************************************************
 
 Fl_Window* window = new Fl_Window(680, 360);
 const int dx = 200;
@@ -46,14 +68,21 @@ Fl_Button truncateButton(
 Fl_Output outputBox(0, 4 * dy, 2*dx, dy);
 Fl_Button quitButton(0, 5 * dy, dx, dy, "Quit.");
 
+//*************************************************************************************************************
+
+
+// Code for the quit button *******
 static void myQuit(Fl_Widget* w, void* userData) {
     exit(1);
 }
+
+//  This is the function that uses the global objects and the code from truncstruct  *************************
 static void display_input(Fl_Widget* w, void* userData){
     size_t a = numberInput.value();
     StringInfo output{ stringInput.value(), a};
     outputBox.value(&trunc(output).str[0]);
 }
+
 int main() {
     truncateButton.callback(display_input);
     quitButton.callback(myQuit);
