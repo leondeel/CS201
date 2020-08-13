@@ -16,9 +16,6 @@ using std::string;
 #include <FL/Fl_Output.H>
 #include <FL/Fl_Counter.H>
 
-#include <cctype>
-using std::toupper;
-
 //I HAD NO CHOICE but to use global variables because I have no other idea on how to get this done.
 //  I knew of no other way, because the lecture on FLTK was never recorded, so I had to figure it out without
 // help.  the website FLTK.ORG was not as helpful as it ought to be for beginners.
