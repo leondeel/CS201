@@ -137,15 +137,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="crud.cpp" />
-    <ClCompile Include="database.cpp" />
-    <ClCompile Include="readLine.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="database.h" />
-    <ClInclude Include="readLine.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
