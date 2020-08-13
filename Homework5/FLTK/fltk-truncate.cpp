@@ -4,7 +4,10 @@
 
 #pragma comment(lib, "fltk.lib")
 #pragma comment(lib, "comctl32.lib")
-#include "../../my_standard_library.h"
+
+#include <string>
+using std::string;
+
 #include <FL/Fl_Button.H>
 #include <FL/Fl.H>
 #include <FL/Fl_Window.H>

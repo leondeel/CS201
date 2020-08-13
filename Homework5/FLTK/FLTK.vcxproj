@@ -146,11 +146,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\my_standard_library.cpp" />
     <ClCompile Include="fltk-truncate.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\my_standard_library.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
