@@ -24,12 +24,18 @@
     <ClCompile Include="..\readLine.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\my_standard_library.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="database.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\readLine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\my_standard_library.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

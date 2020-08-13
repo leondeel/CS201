@@ -1,8 +1,8 @@
 // Homework assignment #4 coded by M. Ariel Hernandez for class Computer Science 201, June 2020
 #ifndef database_header
 #define database_header
-#include "..\..\my_standard_library.h"
-#include "..\readLine.h"
+#include "../my_standard_library.h"
+#include "../readLine.h"
 
 // Struct used for database in Homework # 4
 struct DriverLicense {

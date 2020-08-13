@@ -19,11 +19,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\my_standard_library.cpp" />
     <ClCompile Include="..\readLine.cpp" />
     <ClCompile Include="crud.cpp" />
     <ClCompile Include="database.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\my_standard_library.h" />
     <ClInclude Include="..\readLine.h" />
     <ClInclude Include="database.h" />
   </ItemGroup>
