@@ -20,7 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\my_standard_library.cpp" />
-    <ClCompile Include="truncmain.cpp" />
+    <ClCompile Include="FLTKbullsAndCows.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\my_standard_library.h" />

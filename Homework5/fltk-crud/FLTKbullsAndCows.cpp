@@ -1,6 +1,7 @@
-
-//CS201
-//August 2020
+// Homework assignment #5 coded by M. Ariel Hernandez for class Computer Science 201, August 2020
+// All of the following code performs EXACTLY according to the description in Homework # 5.
+// For more documentation on what this code accomplishes, refer to the homework assignment.
+// This is the additional program that the homework entitles "bulls and cows"
 
 #pragma comment(lib, "fltk.lib")
 #pragma comment(lib, "comctl32.lib")
@@ -14,6 +15,13 @@
 #include <FL/Fl_Output.H>
 #include <FL/Fl_Counter.H>
 #include <FL/Fl_Double_Window.H>
+
+
+
+//I HAD NO CHOICE but to use global variables because I have no other idea on how to get this done.
+//  The lecture on FLTK was never recorded, so I had to figure it out without
+// help.  the website FLTK.ORG was not as helpful as it ought to be for beginners.
+
 
 vector<unsigned short> fourDigits(4);  //initializes a vector of 4 of unsigned shorts.
 string userInput;
@@ -34,12 +42,13 @@ void quitButton(Fl_Widget* w, void* userdata)
 //Opens tutorial
 void helpButton(Fl_Widget*, void*)
 {
-	Fl_Window* window = new Fl_Window(340, 220);
-	Fl_Box* box = new Fl_Box(20, 40, 300, 140, "Instructions!\n Enter a string and the amount"
-		" of characters\n you'd like to truncate in their respective boxes.\n"
-		"***CHARACTERS MUST BE AN INTEGER***\n Then press truncate!\n"
-		"Your output will then be shown below.\n"
-		"To exit press the quit button.");
+	Fl_Window* window = new Fl_Window(650, 350);
+	Fl_Box* box = new Fl_Box(20, 40, 600, 300, "Instructions!\n This program generates a digit string "
+		"of unequal numbers chosen from 0 through 9.\nThen you input 4 digits and press the \"guess\" button "
+		"to see if you got the right answer.\nYou are awarded a \"bull\" for each digit you correctly guess in"
+		" its right location in the string, \n"
+		" and you are awarded a cow for each digit you guess in its incorrect location."
+		"\nTo exit press the quit button.");
 	box->box(FL_UP_BOX);
 	box->labelfont(FL_BOLD + FL_ITALIC);
 	box->labelsize(12);
@@ -79,8 +88,6 @@ void truncButton(Fl_Widget* w, void* userdata)
 	//Must be a c style string
 	Fl_Output* so = (Fl_Output*)b->parent()->child(3);
 	so->value(userInput.c_str());
-	
-	
 }
 
 
