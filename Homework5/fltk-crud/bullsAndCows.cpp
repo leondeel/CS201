@@ -1,5 +1,5 @@
 // Homework assignment #4 coded by M. Ariel Hernandez for class Computer Science 201, June 2020
-#include "..\my_standard_library.h"
+#include "..\..\my_standard_library.h"
 
 // All of the following code performs EXACTLY according to its description in Homework # 4.
 // This code plays a game called "Bulls and Cows".
@@ -22,7 +22,7 @@ int main(){
 	string userInput = "";
 	unsigned short bulls, cows;
 
-
+	do {
 		fourDigits[0] = (distribution(generator));
 
 		do { fourDigits[1] = (distribution(generator)); } while (fourDigits[1] == fourDigits[0]);
@@ -61,7 +61,7 @@ int main(){
 			}
 			cout << "You got " << bulls << " bulls and " << cows << " cows!" << endl << endl;
 		} while (bulls != 4);
-		cout << "Congratulations! You have 4 bulls!";
-
+		cout << "Congratulations! ";
+	} while (userContinues());
 	return 0;
 }

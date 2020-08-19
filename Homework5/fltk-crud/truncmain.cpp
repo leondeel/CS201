@@ -1,7 +1,7 @@
 
 //CS201
-//Oct. 30, 2019
-//Truncate with GUI
+//August 2020
+
 #pragma comment(lib, "fltk.lib")
 #pragma comment(lib, "comctl32.lib")
 
@@ -15,23 +15,10 @@
 #include <FL/Fl_Counter.H>
 #include <FL/Fl_Double_Window.H>
 
-std::random_device seed;
-// "seed" returns a RANDOM number when called, 
-// which will be used to prepare a list of pseudo-random numbers.
-
-std::mt19937 generator(seed());
-// "generator" for pseudo-random numbers takes "seed" as a parameter only once upon initialization.
-
-std::uniform_int_distribution<unsigned short> distribution('0', '9');
-//"distribution" will behave as a function that takes "generator"
-// as a parameter, and the "distribution" will RETURN a random short from 0 to 9
-// every single time "distribuiton" is called with "generator" as the parameter.
-
 vector<unsigned short> fourDigits(4);  //initializes a vector of 4 of unsigned shorts.
 string userInput;
-unsigned short bulls, cows;
-
-
+char bulls =0, cows = 0;
+string bu, c;
 
 //////////////////////////////////////////////////////////////////////
 // C A L L B A C K S /////////////////////////////////////////////////
@@ -61,28 +48,20 @@ void helpButton(Fl_Widget*, void*)
 	
 }
 
-//Grabs string from input on Truncate button press.
+
 void truncButton(Fl_Widget* w, void* userdata)
 {
+	//Grabs input from StringInput
+	Fl_Button* b = (Fl_Button*)w;
+	//StringInput
+	Fl_Input* si = (Fl_Input*)b->parent()->child(0);
 
-	do {
-		do {
-			cout << "Enter 4 distinct digits:  ";
-			getline(cin, userInput);
-		} while
-			(
-				userInput.size() == 0 || userInput.size() != 4 &&
-				(
-					userInput[1] == userInput[0] ||
-					userInput[2] == userInput[0] ||
-					userInput[2] == userInput[1] ||
-					userInput[3] == userInput[0] ||
-					userInput[3] == userInput[1] ||
-					userInput[3] == userInput[2]
-					)
-				);
-		bulls = 0;
-		cows = 0;
+
+	//string st is stringinput
+	userInput = si->value();
+
+		bulls = '0';
+		cows = '0';
 		for (char i = 0; i < 4; i++) {
 			for (char k = 0; k < 4; k++) {
 				if (userInput[i] == fourDigits[k]) {
@@ -91,28 +70,15 @@ void truncButton(Fl_Widget* w, void* userdata)
 				}
 			}
 		}
-		cout << "You got " << bulls << " bulls and " << cows << " cows!" << endl << endl;
-	} while (bulls != 4);
-	cout << "Congratulations! You have 4 bulls!";
-
-
-
-
-	//Grabs input from StringInput
-	Fl_Button* b = (Fl_Button*)w;
-	//StringInput
-	Fl_Input* si = (Fl_Input*)b->parent()->child(0);
-
-
-	//string st is stringinput
-	string finaloutput = si->value();
-	finaloutput = finaloutput + "You got " + char(bulls) + " bulls and " + char(cows) + " cows!";
+		bu = { bulls };
+		c = { cows };
+	userInput = userInput + "  You got " +  bu  + " bulls and " +  c + " cows!";
 
 
 	//Printing finaloutput to the output box
 	//Must be a c style string
 	Fl_Output* so = (Fl_Output*)b->parent()->child(3);
-	so->value(finaloutput.c_str());
+	so->value(userInput.c_str());
 	
 	
 }
@@ -131,7 +97,7 @@ Fl_Window* CreateWindow() {
 	window->resizable(window);
 
 	//String input Child 0
-	Fl_Input* StringInput = new Fl_Input(70, 45, 310, 45, "Input 4 numbers:");
+	Fl_Input* StringInput = new Fl_Input(155, 45, 310, 45, "Input 4 numbers:");
 	
 
 	//Truncate Button Child 1
@@ -162,6 +128,17 @@ Fl_Window* CreateWindow() {
 
 int main(int argc, char** argv)
 {
+	std::random_device seed;
+	// "seed" returns a RANDOM number when called, 
+	// which will be used to prepare a list of pseudo-random numbers.
+
+	std::mt19937 generator(seed());
+	// "generator" for pseudo-random numbers takes "seed" as a parameter only once upon initialization.
+
+	std::uniform_int_distribution<unsigned short> distribution('0', '9');
+	//"distribution" will behave as a function that takes "generator"
+	// as a parameter, and the "distribution" will RETURN a random short from 0 to 9
+	// every single time "distribuiton" is called with "generator" as the parameter.
 
 	fourDigits[0] = (distribution(generator));
 
