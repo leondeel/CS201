@@ -18,6 +18,13 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\my_standard_library.cpp" />
+    <ClCompile Include="truncmain.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\my_standard_library.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <ProjectGuid>{E0399FA0-21CF-4951-B7E9-289A212CD7AA}</ProjectGuid>

@@ -94,28 +94,15 @@ void truncButton(Fl_Widget* w, void* userdata)
 	Fl_Button* b = (Fl_Button*)w;
 	//StringInput
 	Fl_Input* si = (Fl_Input*)b->parent()->child(0);
-	//CharInput
-	Fl_Input* ci = (Fl_Input*)b->parent()->child(1);
 
 
 	//string st is stringinput
 	string st = si->value();
-	//string ch is charinput
-	string ch = ci->value();
 
-	//Covnerting the char string to an int for truncate
-	int tr;
-	istringstream(ch) >> tr;
 
-	//Creating the struct with user
-	//inputted string and char length
-	StringInfo sz{ st, tr };
 
-	//Grabbing return value from trunc
-	StringInfo a = trunc(sz);
-	
 	//Assigning the truncated string as final ouput
-	string finaloutput = a.str;
+	string finaloutput = "sample";
 
 	//Printing finaloutput to the output box
 	//Must be a c style string
@@ -135,19 +122,15 @@ void truncButton(Fl_Widget* w, void* userdata)
 Fl_Window* CreateWindow() {
 
 	//Window
-	Fl_Double_Window* window = new Fl_Double_Window(606, 392, "Truncate");
+	Fl_Double_Window* window = new Fl_Double_Window(606, 392, "Bulls and Cows");
 	window->resizable(window);
 
 	//String input Child 0
-	Fl_Input* StringInput = new Fl_Input(70, 45, 310, 45, "String");
-	
-
-	//Char input Child 1
-	Fl_Input* CharInput = new Fl_Input(470, 45, 85, 45, "Characters");
+	Fl_Input* StringInput = new Fl_Input(70, 45, 310, 45, "Input 4 numbers:");
 	
 
 	//Truncate Button Child 2
-	Fl_Button* TruncButton = new Fl_Button(245, 125, 130, 50, "Truncate");
+	Fl_Button* TruncButton = new Fl_Button(245, 125, 130, 50, "Guess");
 	TruncButton->callback(truncButton);
 	
 
