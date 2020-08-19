@@ -19,7 +19,7 @@ int main(){
 	// every single time "distribuiton" is called with "generator" as the parameter.
 
 	vector<unsigned short> fourDigits(4);  //initializes a vector of 4 of unsigned shorts.
-	string userInput;
+	string userInput = "";
 	unsigned short bulls, cows;
 
 	do {
@@ -39,7 +39,7 @@ int main(){
 				getline(cin, userInput);
 			} while
 				(
-					userInput.size() != 4 &&
+					userInput.size() == 0 || userInput.size() != 4 &&
 					(
 						userInput[1] == userInput[0] ||
 						userInput[2] == userInput[0] ||
